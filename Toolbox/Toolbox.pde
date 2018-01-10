@@ -16,7 +16,7 @@ void setup(){
 }
   
 void draw(){
-  background(0);
+  background(#ffffff);
   if ( page == 0 ) home();
   if(page == 1) background(#ffffff);
 }
