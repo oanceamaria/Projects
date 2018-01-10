@@ -1,10 +1,23 @@
+import android.app.Activity;
+import android.content.Context;
 
- 
+import ketai.camera.*;
+
+KetaiCamera camera;
+
+Activity activity;
+Context context;
+
 int page = 0;
-PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg;
+PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg;
 
 void setup(){
   orientation(PORTRAIT); 
+  
+  activity = this.getActivity();
+  context = activity.getApplicationContext();
+  camera = new KetaiCamera(this, 480, 640, 24);
+  
   colorPickerImg = loadImage("colorPicker.png");
   converterImg = loadImage("convertor.png");
   distanceImg = loadImage("distanta.png");
@@ -13,22 +26,31 @@ void setup(){
   bubbleLevelImg = loadImage("poloboc.png");
   soundIntensityImg = loadImage("sunet.png");
   pavImg = loadImage("volum.png");
+  backImg = loadImage("back.png");
+  gridImg = loadImage("grid.png");
 }
   
 void draw(){
   background(#ffffff);
   if ( page == 0 ) home();
-  if(page == 1) background(#ffffff);
+  if ( page == 1 ) colorPicker();
 }
 
 void mousePressed(){
-  if(mouseX>0 && mouseX<width/3 && mouseY>height/8 && mouseY<height/8+height/3.5 ) page=1;
+  if (page == 0) homeClick();
+  if (page == 1) colorPickerClick();
 }
- public void keyPressed() {
- if (key == CODED) {
- if (keyCode == android.view.KeyEvent.KEYCODE_BACK) {
 
- page=0;  // don't quit by default
- }
- }
- }
+void keyReleased() {
+    if (key == CODED && keyCode == android.view.KeyEvent.KEYCODE_BACK) {
+      page = 0;
+    }
+}
+
+void onCameraPreviewEvent()
+{
+  camera.read();
+}
+
+
+  

@@ -5,18 +5,10 @@ void home(){
   fill(#0000ff);
   textAlign(CENTER, TOP);
   textSize(height/14);
+  imageMode(CORNER);
   rect(0, 0, width, height/10 );
-  fill(#00ffff);
+  fill(#ffffff);
   text("Toolbox", width/2, 30);
-  
-  /*
-  fill(#ff00ff);
-  rect(0, height/8, width/3, height/3.5);
-  fill(#ff0000);
-  rect(0, height/8+height/3.5+12, width/3, height/3.5);
-  fill(#ff00ff);
-  rect(0, height/8+2*height/3.5+2, width/3, height/3.5);
-  */
   
   textSize(height/35);
   strokeWeight(5);
@@ -54,5 +46,18 @@ void home(){
   rect(width/3+25, height/8+2*height/3.5-5, width/3-50, height/3.5-35);
   image(pavImg, width/3+50, 4.95*height/7, width/3-100, height/8);
   text("Perimeter \nArea \nVolume", width/2, 5.9*height/7);
-  
+}
+
+void homeClick(){
+  if ( mouseX > 25 && mouseX < width/3-25 && mouseY > height/8 && mouseY < height/8+height/3.5-35 ) {
+    page = 1;
+    camera.start();
+  }
+  if ( mouseX > width/3+25 && mouseX < 2*width/3-25 && mouseY > height/8 && mouseY < height/8+height/3.5-35 ) page = 2; 
+  if ( mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height/8 && mouseY < height/8+height/3.5-35 ) page = 3;
+  if ( mouseX > 25 && mouseX < width/3-25 && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 4;
+  if ( mouseX > width/3+25 && mouseX < 2*width/3-25  && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 5;
+  if ( mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 6;
+  if ( mouseX > 25 && mouseX < width/3-25 && mouseY > height/8+2*height/3.5-5 && mouseY < height/8+3*height/3.5-40 ) page = 7;
+  if ( mouseX > width/3+25 && mouseX < 2*width/3-25 && mouseY > height/8+2*height/3.5-5 && mouseY < height/8+3*height/3.5-40 ) page = 8;
 }
