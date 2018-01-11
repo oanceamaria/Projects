@@ -53,7 +53,23 @@ void homeClick(){
     page = 1;
     camera.start();
   }
-  if ( mouseX > width/3+25 && mouseX < 2*width/3-25 && mouseY > height/8 && mouseY < height/8+height/3.5-35 ) page = 2; 
+  if ( mouseX > width/3+25 && mouseX < 2*width/3-25 && mouseY > height/8 && mouseY < height/8+height/3.5-35 ) {
+    page = 2; 
+    if (runner == null){ 
+        runner = new Thread(){
+            public void run(){
+                while (runner != null) {
+                    try {
+                        Thread.sleep(300);
+                    } catch (InterruptedException e) { };
+                    myHandler.post(updater);
+                }
+            }
+        };
+        runner.start();
+    }
+    startRecorder();
+  }
   if ( mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height/8 && mouseY < height/8+height/3.5-35 ) page = 3;
   if ( mouseX > 25 && mouseX < width/3-25 && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 4;
   if ( mouseX > width/3+25 && mouseX < 2*width/3-25  && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 5;

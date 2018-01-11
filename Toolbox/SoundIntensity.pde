@@ -1,4 +1,12 @@
-int s=50;
+int soundDB = 0;
+int amplitude = 0;
+
+final Runnable updater = new Runnable(){
+    public void run(){          
+        updateValue();
+    };
+};
+final Handler myHandler = new Handler();
 
 void soundIntenity(){
   strokeWeight(3);
@@ -17,10 +25,52 @@ void soundIntenity(){
   
   pushMatrix();
   translate(width/2, height/2.5);
-  rotate(radians(s*2.5));
+  rotate(radians(soundDB*2.5));
   image(needleImg, 0, 0, height/2, width-100);
   popMatrix();
+  
+  textAlign(CENTER, TOP);
+  fill(#000000);
+  textSize(height/24);
+  text( "Sound intensity: " + soundDB + "dB",  width/2, height/1.42);
+  text( "Sound amplitude: " + amplitude,  width/2, height/1.3);
 
+}
+
+public void startRecorder(){
+  if (mRecorder == null){
+    mRecorder = new MediaRecorder();
+    mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+    mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+    mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+    mRecorder.setOutputFile("/dev/null"); 
+    try{           
+      mRecorder.prepare();
+    }catch (java.io.IOException ioe) {}
+    catch (java.lang.SecurityException e) {}
+    try{           
+      mRecorder.start();
+     }catch (java.lang.SecurityException e) {}
+    }
+}
+
+public void stopRecorder() {
+  if (mRecorder != null) {
+    mRecorder.stop();       
+    mRecorder.release();
+    mRecorder = null;
+  }
+}
+
+public void updateValue(){
+  if (mRecorder != null){
+    soundDB = (int) (20 * Math.log10( (double) (mRecorder.getMaxAmplitude()/0.9 ) ) );
+    amplitude = (int) (mRecorder.getMaxAmplitude());
+    println(mRecorder.getMaxAmplitude());
+  } else {
+    soundDB = 0;
+    amplitude = 0;
+  }
 }
 
 void soundIntensityClick(){
