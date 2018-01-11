@@ -70,7 +70,14 @@ void homeClick(){
     }
     startRecorder();
   }
-  if ( mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height/8 && mouseY < height/8+height/3.5-35 ) page = 3;
+  if ( mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height/8 && mouseY < height/8+height/3.5-35 ) {
+    page = 3;
+    activity.runOnUiThread(new Runnable(){
+      public void run(){
+        if ( !myLocation.canAccessGPS() ) myLocation.showSettings();
+      }
+    });
+  }
   if ( mouseX > 25 && mouseX < width/3-25 && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 4;
   if ( mouseX > width/3+25 && mouseX < 2*width/3-25  && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 5;
   if ( mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 6;

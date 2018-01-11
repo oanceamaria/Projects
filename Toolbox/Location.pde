@@ -16,6 +16,12 @@ void location(){
   imageMode(CENTER);
   image(locationImg, width/2, height/3.5);
   
+  activity.runOnUiThread(new Runnable(){
+      public void run(){
+        if ( myLocation.canAccessGPS() ) locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, myLocation);
+      }
+    });
+  
   textAlign(CORNER, TOP);
   fill(#000000);
   textSize(height/24);

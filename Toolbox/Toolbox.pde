@@ -4,6 +4,15 @@ import android.media.MediaRecorder;
 import android.os.Handler;
 import android.os.Bundle;
 import android.Manifest;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.app.Service;
+import android.content.Intent;
+import android.os.IBinder;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.provider.Settings;
 
 import ketai.camera.*;
 
@@ -14,6 +23,9 @@ Context context;
 
 MediaRecorder mRecorder;
 Thread runner;
+LocationManager locManager;
+LocationListener locListener;
+MyLocation myLocation;
 
 int page = 0;
 PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg;
@@ -27,6 +39,9 @@ void setup(){
   
   activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
   activity.requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, 1);
+  
+  locManager = (LocationManager) activity.getSystemService(Context.LOCATION_SERVICE);
+  myLocation = new MyLocation();
   
   colorPickerImg = loadImage("colorPicker.png");
   converterImg = loadImage("convertor.png");
