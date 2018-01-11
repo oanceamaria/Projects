@@ -47,12 +47,14 @@ void draw(){
   if ( page == 0 ) home();
   if ( page == 1 ) colorPicker();
   if ( page == 2 ) soundIntenity();
+  if ( page == 3 ) location();
 }
 
 void mousePressed(){
   if (page == 0) homeClick();
   if (page == 1) colorPickerClick();
-  if (page == 2) soundIntensityClick();
+  if (page == 2) soundIntensityClick();  
+  if (page == 3) locationClick();
 }
 
 void keyReleased() {

@@ -64,9 +64,8 @@ public void stopRecorder() {
 
 public void updateValue(){
   if (mRecorder != null){
-    soundDB = (int) (20 * Math.log10( (double) (mRecorder.getMaxAmplitude()/0.9 ) ) );
     amplitude = (int) (mRecorder.getMaxAmplitude());
-    println(mRecorder.getMaxAmplitude());
+    soundDB = (int) (20 * Math.log10( (double) (amplitude)/0.9 ) );
   } else {
     soundDB = 0;
     amplitude = 0;
