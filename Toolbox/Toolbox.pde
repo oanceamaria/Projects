@@ -16,7 +16,7 @@ void setup(){
   
   activity = this.getActivity();
   context = activity.getApplicationContext();
-  camera = new KetaiCamera(this, 480, 640, 24);
+  camera = new KetaiCamera(this, 950, 540, 24);
   
   colorPickerImg = loadImage("colorPicker.png");
   converterImg = loadImage("convertor.png");

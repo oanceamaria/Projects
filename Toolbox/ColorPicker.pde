@@ -17,18 +17,24 @@ void colorPicker(){
     translate(width/2, height/2.5);
     rotate(HALF_PI);
     image(camera, 0, 0, height/2, width-100);
+    image(gridImg, 0, 0, height/2, width-100);
     popMatrix();
 
-    /*
-    PImage cI = get(0, 200, 600,400);
-    color c = cI.get(300,200);
-    stroke(#ff0000);
-    noFill();
-    rect(295,395,10,10);
-    fill(c);
-    rect(width-380,0,200,200);
-    text("R:"+red(c)+" \nG:"+green(c)+" \nB:" +blue(c),width-300,300);
-    println(hex(c, 6));*/
+    PImage imgCamera = get(0, 0, width, height);
+    color getColor = imgCamera.get( (int)(width/2), (int)(height/2.5) );
+    stroke(#000000);
+    fill(getColor);
+    rect(width/15+5, height/1.48 ,width/5 ,height/12);
+    fill(#000000);
+    textAlign(LEFT, TOP);
+    textSize(height/28);
+    text( "Color: #" + hex(getColor, 6),  width/3, height/1.42);
+    fill(#ff0000);
+    text( "Red: "+red(getColor),  width/15+5, height/1.2);
+    fill(#00ff00);
+    text( "Green: "+green(getColor),  width/15+5, height/1.15);
+    fill(#0000ff);
+    text( "Blue: " +blue(getColor),  width/15+5, height/1.1);
   }
   else
   {
