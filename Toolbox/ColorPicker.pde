@@ -8,7 +8,7 @@ void colorPicker(){
   imageMode(CORNER);
   rect(0, 0, width, height/10 );
   fill(#ffffff);
-  text("Color Piker", width/2, 40);
+  text("Color Picker", width/2, 40);
   image(backImg, 20, 20, 110, 80);
   
   if (camera != null && camera.isStarted()){
@@ -30,11 +30,11 @@ void colorPicker(){
     textSize(height/28);
     text( "Color: #" + hex(getColor, 6),  width/3, height/1.42);
     fill(#ff0000);
-    text( "Red: "+red(getColor),  width/15+5, height/1.2);
+    text( "Red: "+red(getColor),  width/15+5, height/1.27);
     fill(#00ff00);
-    text( "Green: "+green(getColor),  width/15+5, height/1.15);
+    text( "Green: "+green(getColor),  width/15+5, height/1.2);
     fill(#0000ff);
-    text( "Blue: " +blue(getColor),  width/15+5, height/1.1);
+    text( "Blue: " +blue(getColor),  width/15+5, height/1.13);
   }
   else
   {

@@ -9,7 +9,7 @@ Activity activity;
 Context context;
 
 int page = 0;
-PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg;
+PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg;
 
 void setup(){
   orientation(PORTRAIT); 
@@ -28,17 +28,21 @@ void setup(){
   pavImg = loadImage("volum.png");
   backImg = loadImage("back.png");
   gridImg = loadImage("grid.png");
+  soundMeterImg = loadImage("soundMeter.png");
+  needleImg = loadImage("ac.png");
 }
   
 void draw(){
   background(#ffffff);
   if ( page == 0 ) home();
   if ( page == 1 ) colorPicker();
+  if ( page == 2 ) soundIntenity();
 }
 
 void mousePressed(){
   if (page == 0) homeClick();
   if (page == 1) colorPickerClick();
+  if (page == 2) soundIntensityClick();
 }
 
 void keyReleased() {

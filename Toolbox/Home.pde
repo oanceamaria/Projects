@@ -17,7 +17,7 @@ void home(){
   noFill();
   rect(25, height/8, width/3-50, height/3.5-35);
   image(colorPickerImg, 50, height/7+30, width/3-100, height/8);
-  text("Color Piker", width/6, 2*height/7+30);
+  text("Color Picker", width/6, 2*height/7+30);
   
   rect(width/3+25, height/8, width/3-50, height/3.5-35);
   image(soundIntensityImg, width/3+50, height/7+5, width/3-100, height/8);
