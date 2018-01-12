@@ -4,9 +4,9 @@ int soundDB = 0;
 int amplitude = 0;
 
 final Runnable soundUpdater = new Runnable(){
-    public void run(){          
-        updateValue();
-    };
+  public void run(){          
+    updateValue();
+  };
 };
 final Handler soundHendler = new Handler();
 

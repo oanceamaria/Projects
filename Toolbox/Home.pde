@@ -78,7 +78,14 @@ void homeClick(){
       }
     });
   }
-  if ( mouseX > 25 && mouseX < width/3-25 && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 4;
+  if ( mouseX > 25 && mouseX < width/3-25 && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) {
+    page = 4;
+    activity.runOnUiThread(new Runnable(){
+      public void run(){
+        if ( !myLocation.canAccessGPS() ) myLocation.showSettings();
+      }
+    });
+  }
   if ( mouseX > width/3+25 && mouseX < 2*width/3-25  && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 5;
   if ( mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 6;
   if ( mouseX > 25 && mouseX < width/3-25 && mouseY > height/8+2*height/3.5-5 && mouseY < height/8+3*height/3.5-40 ) page = 7;

@@ -22,7 +22,11 @@ Activity activity;
 Context context;
 
 int page = 0;
+int posMen = 1;
+int posCloud = 1;
 PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg;
+PImage [] mens;
+PImage [] clouds;
 
 void setup(){
   orientation(PORTRAIT); 
@@ -49,6 +53,18 @@ void setup(){
   gridImg = loadImage("grid.png");
   soundMeterImg = loadImage("soundMeter.png");
   needleImg = loadImage("ac.png");
+  
+  mens = new PImage[30];
+  for (int i=1;i<=21;i++){
+    String imgName = "anim/wolking" + i + ".png";
+    mens[i] = loadImage(imgName);
+  }
+  
+  clouds = new PImage[5];
+  for (int i=1;i<=3;i++){
+    String imgName = "anim/cloud" + i + ".png";
+    clouds[i] = loadImage(imgName);
+  }
 }
   
 void draw(){
