@@ -21,12 +21,6 @@ KetaiCamera camera;
 Activity activity;
 Context context;
 
-MediaRecorder mRecorder;
-Thread runner;
-LocationManager locManager;
-LocationListener locListener;
-MyLocation myLocation;
-
 int page = 0;
 PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg;
 
@@ -63,6 +57,7 @@ void draw(){
   if ( page == 1 ) colorPicker();
   if ( page == 2 ) soundIntenity();
   if ( page == 3 ) location();
+  if ( page == 4 ) distance();
 }
 
 void mousePressed(){
@@ -70,6 +65,7 @@ void mousePressed(){
   if (page == 1) colorPickerClick();
   if (page == 2) soundIntensityClick();  
   if (page == 3) locationClick();
+  if (page == 4) distanceClick();
 }
 
 void keyReleased() {

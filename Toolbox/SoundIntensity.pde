@@ -1,12 +1,14 @@
+MediaRecorder mRecorder;
+Thread soundRunner;
 int soundDB = 0;
 int amplitude = 0;
 
-final Runnable updater = new Runnable(){
+final Runnable soundUpdater = new Runnable(){
     public void run(){          
         updateValue();
     };
 };
-final Handler myHandler = new Handler();
+final Handler soundHendler = new Handler();
 
 void soundIntenity(){
   strokeWeight(3);

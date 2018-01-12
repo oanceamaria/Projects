@@ -55,18 +55,18 @@ void homeClick(){
   }
   if ( mouseX > width/3+25 && mouseX < 2*width/3-25 && mouseY > height/8 && mouseY < height/8+height/3.5-35 ) {
     page = 2; 
-    if (runner == null){ 
-        runner = new Thread(){
+    if (soundRunner == null){ 
+        soundRunner = new Thread(){
             public void run(){
-                while (runner != null) {
+                while (soundRunner != null) {
                     try {
                         Thread.sleep(300);
                     } catch (InterruptedException e) { };
-                    myHandler.post(updater);
+                    soundHendler.post(soundUpdater);
                 }
             }
         };
-        runner.start();
+        soundRunner.start();
     }
     startRecorder();
   }

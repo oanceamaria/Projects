@@ -1,3 +1,7 @@
+LocationManager locManager;
+LocationListener locListener;
+MyLocation myLocation;
+
 public class MyLocation extends Service implements LocationListener{  
   boolean isGPS = false; 
   
