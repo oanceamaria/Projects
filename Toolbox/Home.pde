@@ -85,6 +85,12 @@ void homeClick(){
         if ( !myLocation.canAccessGPS() ) myLocation.showSettings();
       }
     });
+    xCloud1 = width;
+    yCloud1 = height/9;
+    xCloud2 = width + width/2.5;
+    yCloud2 = height/7;
+    xCloud3 = width + width/1.5;
+    yCloud3 = height/8;
   }
   if ( mouseX > width/3+25 && mouseX < 2*width/3-25  && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 5;
   if ( mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height/8+height/3.5-5 && mouseY < height/8+2*height/3.5-40 ) page = 6;

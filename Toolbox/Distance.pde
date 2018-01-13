@@ -8,14 +8,7 @@ final Runnable distanceUpdater = new Runnable(){
 };
 final Handler distnaceHandler = new Handler();
 
-float xCloud1 = width-80;
-float yCloud1 = 150;
-
-float xCloud2 = width+420;
-float yCloud2 = 200;
-
-float xCloud3 = -100;
-float yCloud3 = 180;
+float xCloud1, yCloud1, xCloud2, yCloud2, xCloud3, yCloud3;
 
 void distance(){
   strokeWeight(3);
@@ -30,26 +23,43 @@ void distance(){
   image(backImg, 20, 20, 110, 80);
   
   if (state == "STOP" ){
-    image(clouds[1], xCloud1, yCloud1, 80, 80);
-    if (xCloud1 > -80) xCloud1--;
+    image(clouds[1], xCloud1, yCloud1, 100, 100);
+    if (xCloud1 > -100) xCloud1--;
     else xCloud1 = width;
     image(clouds[2], xCloud2, yCloud2, 120, 90);
     if (xCloud2 > -120) xCloud2--;
-    else xCloud2 = width;
-    image(clouds[3], xCloud3, yCloud3, 60, 60);
-    if (xCloud3 > -400) xCloud3--;
-    else xCloud3 = width;
+    else xCloud2 = width + width/2.5;
+    image(clouds[3], xCloud3, yCloud3, 80, 80);
+    if (xCloud3 > -80) xCloud3--;
+    else xCloud3 = width + width/1.5;
   }
   imageMode(CENTER);
   image(mens[posMen], width/2, height/3, 300, 300);
   
+  strokeWeight(6);
+  stroke(#000000);
+  line(0, height/2.5, width, height/2.5 );
+  line(0, height/2.1, width, height/2.1);
+  
+  activity.runOnUiThread(new Runnable(){
+      public void run(){
+        if ( myLocation.canAccessGPS() ) locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 0, myLocation);
+      }
+    });
+    
   textSize(height/25);
   strokeWeight(5);
   stroke(#b3b3b3);
-  noFill();
-  rect(width/3, height/8+2*height/3, width/3, height/10);
   fill(#000000);
-  text(state, width/2, height/8+2*height/3+40);
+  noFill();
+  if (GPSenabeled){
+    if (latitude != 0){
+      rect(width/3, height/8+2*height/3, width/3, height/10);
+      text(state, width/2, height/8+2*height/3+40);
+    }
+    else text("GPS conecting...", width/2, height/8+2*height/3+40);
+  }
+  else text( "GPS is not enabled." ,  width/14, height/2.5);
 
 }
 

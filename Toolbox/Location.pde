@@ -25,9 +25,15 @@ void location(){
   textAlign(CORNER, TOP);
   fill(#000000);
   textSize(height/24);
-  text( "Latitude: " + latitude ,  width/14, height/2.5);
-  text( "Longitude: " + longitude ,  width/14, height/2.15);
-  text( "Altitude: " + altitude ,  width/14, height/1.9);
+  if (GPSenabeled){
+    if (latitude != 0){
+      text( "Latitude: " + latitude ,  width/14, height/2.5);
+      text( "Longitude: " + longitude ,  width/14, height/2.15);
+      text( "Altitude: " + altitude ,  width/14, height/1.9);
+    }
+    else text( "GPS conecting..." ,  width/14, height/2.5);
+  }
+  else text( "GPS is not enabled." ,  width/14, height/2.5);
 }
 
 void locationClick(){
