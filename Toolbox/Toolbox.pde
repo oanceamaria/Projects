@@ -28,7 +28,7 @@ PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, b
 PImage [] mens;
 PImage [] clouds;
 
-boolean GPSenabeled = false;
+boolean GPSenabeled = true;
 
 void setup(){
   orientation(PORTRAIT); 

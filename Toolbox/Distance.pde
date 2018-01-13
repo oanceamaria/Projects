@@ -10,6 +10,8 @@ final Handler distnaceHandler = new Handler();
 
 float xCloud1, yCloud1, xCloud2, yCloud2, xCloud3, yCloud3;
 
+double latitude1, latitude2, longitude1, longitude2, altitude1, altitude2, distance = 0;
+
 void distance(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -45,13 +47,19 @@ void distance(){
       public void run(){
         if ( myLocation.canAccessGPS() ) locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 0, myLocation);
       }
-    });
+  });
     
-  textSize(height/25);
+  textSize(height/24);
   strokeWeight(5);
   stroke(#b3b3b3);
   fill(#000000);
   noFill();
+  
+  if (state == "START" && distance != 0){
+    if (distance < 1000) text("Distance: " + (round( (float)distance * 100.0f ) / 100.0f) + "m", width/2, height/1.6);
+    else text("Distance: " + (round( (float)(distance/1000) * 100.0f ) / 100.0f ) + "km", width/2, height/1.6);
+  }
+  
   if (GPSenabeled){
     if (latitude != 0){
       rect(width/3, height/8+2*height/3, width/3, height/10);
@@ -59,8 +67,7 @@ void distance(){
     }
     else text("GPS conecting...", width/2, height/8+2*height/3+40);
   }
-  else text( "GPS is not enabled." ,  width/14, height/2.5);
-
+  else text( "GPS is not enabled." ,  width/2, height/8+2*height/3+40);
 }
 
 void distanceClick(){
@@ -86,8 +93,18 @@ void distanceClick(){
     state = "START";
     distanceRunner = null;
     posMen = 1;
+    latitude2 = latitude;
+    longitude2 = longitude;
+    altitude2 = altitude;
+    calculeaza();
   }
-  else state = "STOP";
+  else {
+    state = "STOP";
+    latitude1 = latitude;
+    longitude1 = longitude;
+    altitude1 = altitude;
+    distance = 0;
+  }
     
   }
 }
@@ -95,4 +112,16 @@ void distanceClick(){
 void go(){
    if (posMen < 20) posMen++;
    else posMen = 1;
+}
+
+void calculeaza(){
+  final int R = 6371; 
+  double latDistance = Math.toRadians(latitude2 - latitude1);
+  double lonDistance = Math.toRadians(longitude2 - longitude1);
+  double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2) + Math.cos(Math.toRadians(latitude1)) * Math.cos(Math.toRadians(latitude2)) * Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
+  double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  double distanceLL = R * c * 1000; 
+  double altitudeD = altitude1 - altitude2;
+  distanceLL = Math.pow(distanceLL, 2) + Math.pow(altitudeD, 2);
+  distance = Math.sqrt(distanceLL);  
 }

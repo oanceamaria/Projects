@@ -45,6 +45,7 @@ public class MyLocation extends Service implements LocationListener{
       alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
         public void onClick(DialogInterface dialog, int which) {
           dialog.cancel();
+          GPSenabeled = false;
         }
       });
 
