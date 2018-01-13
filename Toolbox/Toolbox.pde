@@ -13,6 +13,11 @@ import android.os.IBinder;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.provider.Settings;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+
 
 import ketai.camera.*;
 
@@ -21,10 +26,12 @@ KetaiCamera camera;
 Activity activity;
 Context context;
 
+Accelerometer accelerometer;
+
 int page = 0;
 int posMen = 1;
 int posCloud = 1;
-PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg;
+PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg, line1, line2;
 PImage [] mens;
 PImage [] clouds;
 
@@ -43,6 +50,11 @@ void setup(){
   locManager = (LocationManager) activity.getSystemService(Context.LOCATION_SERVICE);
   myLocation = new MyLocation();
   
+  managerA = (SensorManager)context.getSystemService(Context.SENSOR_SERVICE);
+  sensorA = managerA.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+  accelerometer = new Accelerometer();
+  managerA.registerListener(accelerometer, sensorA, SensorManager.SENSOR_DELAY_GAME);
+  
   colorPickerImg = loadImage("colorPicker.png");
   converterImg = loadImage("convertor.png");
   distanceImg = loadImage("distanta.png");
@@ -55,6 +67,8 @@ void setup(){
   gridImg = loadImage("grid.png");
   soundMeterImg = loadImage("soundMeter.png");
   needleImg = loadImage("ac.png");
+  line1 = loadImage("line1.png");
+  line2 = loadImage("line2.png");
   
   mens = new PImage[30];
   for (int i=1;i<=21;i++){
