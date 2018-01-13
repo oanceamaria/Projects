@@ -76,6 +76,7 @@ void draw(){
   if ( page == 2 ) soundIntenity();
   if ( page == 3 ) location();
   if ( page == 4 ) distance();
+  if ( page == 5 ) inclination();
 }
 
 void mousePressed(){
@@ -84,6 +85,7 @@ void mousePressed(){
   if (page == 2) soundIntensityClick();  
   if (page == 3) locationClick();
   if (page == 4) distanceClick();
+  if (page == 5) inclinationClick();
 }
 
 void keyReleased() {
