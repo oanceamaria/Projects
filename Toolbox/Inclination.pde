@@ -9,7 +9,7 @@ void inclination(){
   imageMode(CORNER);
   rect(0, 0, width, height/10 );
   fill(#ffffff);
-  text("Inclination", width/2, 40);
+  text("Inclination", width/2, 40); 
   image(backImg, 20, 20, 110, 80);
   
   inclination = atan( ay / (sqrt(pow(ax,2) + pow(az,2))));
@@ -24,6 +24,14 @@ void inclination(){
   image(line2, 0, 0, height/30, width/1.5);
   popMatrix();
   
+  strokeWeight(12);
+  stroke(#00ff00);
+  noFill();
+  if ( inclination >= 0) arc( width/6, height/1.8+height/30, width/5,  width/5, radians( 360 - inclination ), radians(358) );
+  
+  textSize(height/24);
+  fill(#000000);
+  if ( inclination >= 0) text("Inclination: " + round( (inclination * 100.0f ) / 100.0f ) + "°", width/2, height/1.4);
 }
 
 void inclinationClick(){
