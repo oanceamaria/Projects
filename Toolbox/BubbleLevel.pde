@@ -11,6 +11,13 @@ void bubbleLevel(){
   text("Bubble Level", width/2, 40);
   image(backImg, 20, 20, 110, 80);
   
+  xBLH = width/2 + ax * 25;
+  
+  xBL = width/2.7 + ax * 15;
+  yBL = height/2.2 + ay *15;
+  
+  yBLV = height/1.9 + ay * 25;
+  
   imageMode(CENTER);
   image(BLhorizontal, width/2+3, height/5.8, width/1.1, height/9);
   image(bubble, xBLH, yBLH, height/14, height/16);
