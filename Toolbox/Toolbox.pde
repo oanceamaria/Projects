@@ -69,7 +69,7 @@ void setup(){
   needleImg = loadImage("ac.png");
   line1 = loadImage("line1.png");
   line2 = loadImage("line2.png");
-  bubble = loadImage("bula.png");
+  bubble = loadImage("bula2.png");
   bubbleLevel = loadImage("rotund.png");
   BLvertical = loadImage("vertical.png");
   BLhorizontal = loadImage("orizontal.png");
