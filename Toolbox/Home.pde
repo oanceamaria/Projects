@@ -40,8 +40,8 @@ void home(){
   text("Bubble \nLevel", width-width/6, 3.85*height/7);
   
   rect(25, height/8+2*height/3.5-5, width/3-50, height/3.5-35);
-  image(converterImg, 50, 5.1*height/7, width/3-100, height/8);
-  text("Converter", width/6, 6.1*height/7);
+  image(converterImg, 50, 5*height/7, width/3-100, height/8);
+  text("Unit \nConverter", width/6, 6*height/7);
   
   rect(width/3+25, height/8+2*height/3.5-5, width/3-50, height/3.5-35);
   image(pavImg, width/3+50, 4.95*height/7, width/3-100, height/8);

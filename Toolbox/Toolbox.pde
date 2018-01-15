@@ -69,7 +69,7 @@ void setup(){
   needleImg = loadImage("ac.png");
   line1 = loadImage("line1.png");
   line2 = loadImage("line2.png");
-  bubble = loadImage("bula2.png");
+  bubble = loadImage("bula.png");
   bubbleLevel = loadImage("rotund.png");
   BLvertical = loadImage("vertical.png");
   BLhorizontal = loadImage("orizontal.png");
@@ -96,6 +96,7 @@ void draw(){
   if ( page == 4 ) distance();
   if ( page == 5 ) inclination();
   if ( page == 6 ) bubbleLevel();
+  if ( page == 7 ) unitConverter();
 }
 
 void mousePressed(){
@@ -106,6 +107,7 @@ void mousePressed(){
   if (page == 4) distanceClick();
   if (page == 5) inclinationClick();
   if (page == 6) bubbleLevelClick();
+  if (page == 7) unitConverterClick();
 }
 
 void keyReleased() {
