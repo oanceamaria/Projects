@@ -35,7 +35,7 @@ void inclination(){
 }
 
 void inclinationClick(){
-  if ( mouseX > 20 && mouseX <130 && mouseY > 20 && mouseY < 100 ) {
+  if ( mouseX > 20 && mouseX < 130 && mouseY > 20 && mouseY < 100 ) {
     page = 0;
   }
 }

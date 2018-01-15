@@ -43,7 +43,7 @@ void colorPicker(){
 }
 
 void colorPickerClick(){
-  if ( mouseX > 20 && mouseX <130 && mouseY > 20 && mouseY < 100 ) {
+  if ( mouseX > 20 && mouseX < 130 && mouseY > 20 && mouseY < 100 ) {
     page = 0;
     camera.stop();
   }

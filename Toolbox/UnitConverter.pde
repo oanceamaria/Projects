@@ -1,3 +1,4 @@
+int pageUC = 0;
 
 void unitConverter(){
   strokeWeight(3);
@@ -19,26 +20,36 @@ void unitConverter(){
   noFill();
   rect(50, height/7, width/1.15, height/10 );
   text("Angle Converter", width/2, height/5.7);
-  rect(50, height/7+height/10, width/1.15, height/10 );
-  text("Area Converter", width/2, height/5.7+height/10);
-  rect(50, height/7+2*height/10, width/1.15, height/10 );
-  text("Length Converter", width/2, height/5.7+2*height/10);
-  rect(50, height/7+3*height/10, width/1.15, height/10 );
-  text("Metric Converter", width/2, height/5.7+3*height/10);
-  rect(50, height/7+4*height/10, width/1.15, height/10 );
-  text("Temperature Converter", width/2, height/5.7+4*height/10);
-  rect(50, height/7+5*height/10, width/1.15, height/10 );
-  text("Time Converter", width/2, height/5.7+5*height/10);
-  rect(50, height/7+6*height/10, width/1.15, height/10 );
-  text("Volume Converter", width/2, height/5.7+6*height/10);
-  rect(50, height/7+7*height/10, width/1.15, height/10 );
-  text("Weight Converter", width/2, height/5.7+7*height/10);
+  rect(50, height/7 + height/10, width/1.15, height/10 );
+  text("Area Converter", width/2, height/5.7 + height/10);
+  rect(50, height/7 + 2*height/10, width/1.15, height/10 );
+  text("Length Converter", width/2, height/5.7 + 2*height/10);
+  rect(50, height/7 + 3*height/10, width/1.15, height/10 );
+  text("Metric Converter", width/2, height/5.7 + 3*height/10);
+  rect(50, height/7 + 4*height/10, width/1.15, height/10 );
+  text("Temperature Converter", width/2, height/5.7 + 4*height/10);
+  rect(50, height/7 + 5*height/10, width/1.15, height/10 );
+  text("Time Converter", width/2, height/5.7 + 5*height/10);
+  rect(50, height/7 + 6*height/10, width/1.15, height/10 );
+  text("Volume Converter", width/2, height/5.7 + 6*height/10);
+  rect(50, height/7 + 7*height/10, width/1.15, height/10 );
+  text("Weight Converter", width/2, height/5.7 + 7*height/10);
   
   
 }
 
 void unitConverterClick(){
-  if ( mouseX > 20 && mouseX <130 && mouseY > 20 && mouseY < 100 ) {
+  if ( mouseX > 20 && mouseX < 130 && mouseY > 20 && mouseY < 100 ) {
     page = 0;
   }
+  
+  if ( mouseX > 50 && mouseX < 50 + width/1.15 && mouseY > height/7 && mouseY < height/7 + height/10 ) pageUC = 1;
+  if ( mouseX > 50 && mouseX < 50 + width/1.15 && mouseY > height/7 + height/10 && mouseY < height/7 + 2*height/10 ) pageUC = 2;
+  if ( mouseX > 50 && mouseX < 50 + width/1.15 && mouseY > height/7 + 2*height/10 && mouseY < height/7 + 3*height/10 ) pageUC = 3;
+  if ( mouseX > 50 && mouseX < 50 + width/1.15 && mouseY > height/7 + 3*height/10 && mouseY < height/7 + 4*height/10 ) pageUC = 4;
+  if ( mouseX > 50 && mouseX < 50 + width/1.15 && mouseY > height/7 + 4*height/10 && mouseY < height/7 + 5*height/10 ) pageUC = 5;
+  if ( mouseX > 50 && mouseX < 50 + width/1.15 && mouseY > height/7 + 5*height/10 && mouseY < height/7 + 6*height/10 ) pageUC = 6;
+  if ( mouseX > 50 && mouseX < 50 + width/1.15 && mouseY > height/7 + 6*height/10 && mouseY < height/7 + 7*height/10 ) pageUC = 7;
+  if ( mouseX > 50 && mouseX < 50 + width/1.15 && mouseY > height/7 + 7*height/10 && mouseY < height/7 + 8*height/10 ) pageUC = 8;
+
 }
