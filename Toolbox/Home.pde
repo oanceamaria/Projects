@@ -102,6 +102,9 @@ void homeClick(){
     xBLH = width/2;
     yBLH  = height/5.8;
   }
-  if ( mouseX > 25 && mouseX < width/3-25 && mouseY > height/8+2*height/3.5-5 && mouseY < height/8+3*height/3.5-40 ) page = 7;
+  if ( mouseX > 25 && mouseX < width/3-25 && mouseY > height/8+2*height/3.5-5 && mouseY < height/8+3*height/3.5-40 ) {
+    page = 7;
+    pageUC = 0 ;
+  }
   if ( mouseX > width/3+25 && mouseX < 2*width/3-25 && mouseY > height/8+2*height/3.5-5 && mouseY < height/8+3*height/3.5-40 ) page = 8;
 }

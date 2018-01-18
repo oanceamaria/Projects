@@ -43,14 +43,14 @@ void unitConverterClick(){
   
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 && mouseY < height/10 + height/8.9 ) {
     pageUC = 1;
-    activeKeyboard = true;
+    page = -1;
   }
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 + height/8.9 && mouseY < height/10 + 2*height/8.9 ) pageUC = 2;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 2*height/8.9 && mouseY < height/10 + 3*height/8.9 ) pageUC = 3;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 3*height/8.9 && mouseY < height/10 + 4*height/8.9 ) pageUC = 4;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 4*height/8.9 && mouseY < height/10 + 5*height/8.9 ) pageUC = 5;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 5*height/8.9 && mouseY < height/10 + 6*height/8.9 ) pageUC = 6;
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 6*height/8.9 && mouseY < height/10 + 7*height/8.9 ) pageUC = 7;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 6*height/8.9 && mouseY < height/10 + 7*height/8.9 && pageUC==0) pageUC = 7;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 7*height/8.9 && mouseY < height/10 + 8*height/8.9 ) pageUC = 8;
 
 }

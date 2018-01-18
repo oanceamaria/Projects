@@ -98,19 +98,22 @@ void draw(){
   if ( page == 5 ) inclination();
   if ( page == 6 ) bubbleLevel();
   if ( page == 7 ) unitConverter();
-  if(activeKeyboard && page == 7 ) keyboard();
+  if ( page == -1 && pageUC == 1 ) angleConverter();
+  if(activeKeyboard) keyboard();
 }
 
 void mousePressed(){
-  if (page == 0) homeClick();
-  if (page == 1) colorPickerClick();
-  if (page == 2) soundIntensityClick();  
-  if (page == 3) locationClick();
-  if (page == 4) distanceClick();
-  if (page == 5) inclinationClick();
-  if (page == 6) bubbleLevelClick();
-  if (page == 7) unitConverterClick();
+  if ( page == 0 ) homeClick();
+  if ( page == 1 ) colorPickerClick();
+  if ( page == 2 ) soundIntensityClick();  
+  if ( page == 3 ) locationClick();
+  if ( page == 4 ) distanceClick();
+  if ( page == 5 ) inclinationClick();
+  if ( page == 6 ) bubbleLevelClick();
+  if ( page == 7 ) unitConverterClick();
+  if ( page == -1 && pageUC == 1 ) angleConverterClick();
   if(activeKeyboard) keyboardClick();
+  
 }
 
 void keyReleased() {
