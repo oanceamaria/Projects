@@ -31,7 +31,7 @@ Accelerometer accelerometer;
 int page = 0;
 int posMen = 1;
 int posCloud = 1;
-PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg, line1, line2, bubble, bubbleLevel, BLvertical, BLhorizontal;
+PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg, line1, line2, bubble, bubbleLevel, BLvertical, BLhorizontal, tastClear;
 PImage [] mens;
 PImage [] clouds;
 
@@ -73,6 +73,7 @@ void setup(){
   bubbleLevel = loadImage("rotund.png");
   BLvertical = loadImage("vertical.png");
   BLhorizontal = loadImage("orizontal.png");
+  tastClear = loadImage("tastClear.png");
   
   mens = new PImage[30];
   for (int i=1;i<=21;i++){

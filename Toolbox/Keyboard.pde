@@ -1,4 +1,5 @@
 boolean activeKeyboard = false;
+String valueKeyboard = "";
 
 void keyboard(){
   noStroke();
@@ -67,7 +68,7 @@ void keyboard(){
   fill(#ffffff);
   text(".", width/6, height-height/6.5);
   
-  if (mouseX > width/3+25 && mouseX < 2*width/3-50 && mouseY > height-height/6 && mouseY <  height-height/6+height/14 ) fill(#aaaaaa);
+  if (mouseX > width/3+25 && mouseX < 2*width/3-25 && mouseY > height-height/6 && mouseY <  height-height/6+height/14 ) fill(#aaaaaa);
   else fill(#636363); 
   rect(width/3+25, height-height/6, width/3-50, height/14, 10);
   fill(#ffffff);
@@ -77,7 +78,8 @@ void keyboard(){
   else fill(#333333); 
   rect(2*width/3+25, height-height/6, width/3-50, height/14, 10);
   fill(#ffffff);
-  text("X", width-width/6, height-height/6.5);
+  imageMode(CENTER);
+  image(tastClear, width-width/6, height-height/7.5, width/6, height/17);
   
   if (mouseX > 25 && mouseX < width-25 && mouseY > height-height/13  && mouseY < height-height/13+height/14 ) fill(#aaaaaa);
   else fill(#333333);
@@ -87,7 +89,18 @@ void keyboard(){
 }
 
 void keyboardClick(){
-  //if ( mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height-height/2.5 && activeKeyboard ){ activeKeyboard = false;println("d");}
+  if (mouseX > 25 && mouseX < width/3-25 && mouseY > height-height/2.22 && mouseY <  height-height/2.22+height/14 ) valueKeyboard += "1";
+  if (mouseX > width/3+25 && mouseX < 2*width/3-25 && mouseY > height-height/2.22 && mouseY <  height-height/2.22+height/14 ) valueKeyboard += "2";
+  if (mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height-height/2.22 && mouseY <  height-height/2.22+height/14 ) valueKeyboard += "3";
+  if (mouseX > 25 && mouseX < width/3-25 && mouseY > height-height/2.8 && mouseY <  height-height/2.8+height/14 ) valueKeyboard += "4";
+  if (mouseX > width/3+25 && mouseX < 2*width/3-25 && mouseY > height-height/2.8 && mouseY <  height-height/2.8+height/14 ) valueKeyboard += "5";
+  if (mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height-height/2.8 && mouseY <  height-height/2.8+height/14 ) valueKeyboard += "6";
+  if (mouseX > 25 && mouseX < width/3-25 && mouseY > height-height/3.8 && mouseY <  height-height/3.8+height/14 ) valueKeyboard += "7";
+  if (mouseX > 25+width/3 && mouseX < 2*width/3-25 && mouseY > height-height/3.8 && mouseY <  height-height/3.8+height/14 )  valueKeyboard += "8";
+  if (mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height-height/3.8 && mouseY <  height-height/3.8+height/14 ) valueKeyboard += "9";
+  if (mouseX > 25 && mouseX < width/3-25 && mouseY > height-height/6 && mouseY <  height-height/6+height/14  && !valueKeyboard.contains(".") ) valueKeyboard += ".";
+  if (mouseX > width/3+25 && mouseX < 2*width/3-25 && mouseY > height-height/6 && mouseY <  height-height/6+height/14 ) valueKeyboard += "0";
+  if (mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height-height/6 && mouseY <  height-height/6+height/14 && valueKeyboard.length() >= 1) valueKeyboard = valueKeyboard.substring(0, valueKeyboard.length()-1);
   
   if (mouseX > 25 && mouseX < width-25 && mouseY > height-height/13  && mouseY < height-height/13+height/14 ) activeKeyboard = false;
 }
