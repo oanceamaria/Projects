@@ -45,7 +45,10 @@ void unitConverterClick(){
     pageUC = 1;
     page = -1;
   }
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10 + height/8.9 && mouseY < height/10 + 2*height/8.9 ) pageUC = 2;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10 + height/8.9 && mouseY < height/10 + 2*height/8.9 ) {
+    pageUC = 2;
+    page = -1;
+  }
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 2*height/8.9 && mouseY < height/10 + 3*height/8.9 ) pageUC = 3;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 3*height/8.9 && mouseY < height/10 + 4*height/8.9 ) pageUC = 4;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 4*height/8.9 && mouseY < height/10 + 5*height/8.9 ) pageUC = 5;
