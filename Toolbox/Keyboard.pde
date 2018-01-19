@@ -103,4 +103,25 @@ void keyboardClick(){
   if (mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height-height/6 && mouseY <  height-height/6+height/14 && valueKeyboard.length() >= 1) valueKeyboard = valueKeyboard.substring(0, valueKeyboard.length()-1);
   
   if (mouseX > 25 && mouseX < width-25 && mouseY > height-height/13  && mouseY < height-height/13+height/14 ) activeKeyboard = false;
+  
+  if (valueKeyboard.length() > 15 ) {
+    activity.runOnUiThread(new Runnable(){
+      public void run(){
+        valueTooLong();
+      }
+    });
+  }
 }
+
+ void valueTooLong(){
+    AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
+    alertDialog.setTitle("Information");
+    alertDialog.setMessage("The maximum value has been reached!");
+    alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+      public void onClick(DialogInterface dialog,int which) {
+        activeKeyboard = false;
+        valueKeyboard = valueKeyboard.substring(0, valueKeyboard.length()-1);
+      }
+    });
+    alertDialog.show();
+  }

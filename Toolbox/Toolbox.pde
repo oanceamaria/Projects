@@ -111,8 +111,9 @@ void mousePressed(){
   if ( page == 5 ) inclinationClick();
   if ( page == 6 ) bubbleLevelClick();
   if ( page == 7 ) unitConverterClick();
+    if(activeKeyboard) keyboardClick();
   if ( page == -1 && pageUC == 1 ) angleConverterClick();
-  if(activeKeyboard) keyboardClick();
+
   
 }
 
