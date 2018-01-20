@@ -98,9 +98,10 @@ void draw(){
   if ( page == 5 ) inclination();
   if ( page == 6 ) bubbleLevel();
   if ( page == 7 ) unitConverter();
-  if(activeKeyboard) keyboard();
   if ( page == -1 && pageUC == 1 ) angleConverter();
   if ( page == -1 && pageUC == 2 ) areaConverter();
+  
+  if(activeKeyboard) keyboard();
   
 }
 
