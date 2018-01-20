@@ -100,6 +100,7 @@ void draw(){
   if ( page == 7 ) unitConverter();
   if ( page == -1 && pageUC == 1 ) angleConverter();
   if ( page == -1 && pageUC == 2 ) areaConverter();
+  if ( page == -1 && pageUC == 3 ) lengthConverter();
   
   if(activeKeyboard) keyboard();
   
@@ -117,6 +118,7 @@ void mousePressed(){
   if(activeKeyboard) keyboardClick();
   if ( page == -1 && pageUC == 1 ) angleConverterClick();
   if ( page == -1 && pageUC == 2 ) areaConverterClick();
+  if ( page == -1 && pageUC == 3 ) lengthConverterClick();
   
 }
 
