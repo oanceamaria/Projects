@@ -13,7 +13,7 @@ void lengthConverter(){
   imageMode(CORNER);
   rect(0, 0, width, height/9 );
   fill(#ffffff);
-  text("Length Converter", width/2+20, 40);
+  text("Length Converter", width/2+30, 40);
   image(backImg, 20, 20, 110, 80);
   
   strokeWeight(6);
