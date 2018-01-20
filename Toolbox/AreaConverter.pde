@@ -154,13 +154,139 @@ void areaConverterClick(){
   }
 
   if ( mouseX > 10 && mouseX < width/2-30 && mouseY > height/7 && mouseY < height/7+height/12 ) activeKeyboard = true;
-  /*
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/3 && mouseY <  height/3+height/16 ) unitA1 = "degrees";
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/3+height/16 && mouseY <  height/3+2*height/16 ) unitA1 = "radians";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/3 && mouseY <  height/3+height/16 ) unitA2 = "degrees";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/3+height/16 && mouseY <  height/3+2*height/16 ) unitA2 = "radians";
-  */
+  
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4 && mouseY <  height/4+height/20 ) unitAr1 = "mm²";
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+height/20 && mouseY <  height/4+2*height/20 ) unitAr1 = "cm²";
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+2*height/20 && mouseY <  height/4+3*height/20 ) unitAr1 = "in²";
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+3*height/20 && mouseY <  height/4+4*height/20 ) unitAr1 = "dm²";
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+4*height/20 && mouseY <  height/4+5*height/20 ) unitAr1 = "ft²";
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+5*height/20 && mouseY <  height/4+6*height/20 ) unitAr1 = "m²";
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+6*height/20 && mouseY <  height/4+7*height/20 ) unitAr1 = "are(a) / dam²";
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+7*height/20 && mouseY <  height/4+8*height/20 ) unitAr1 = "hectare(ha)";
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+8*height/20 && mouseY <  height/4+9*height/20 ) unitAr1 = "km²"; 
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+9*height/20 && mouseY <  height/4+10*height/20 ) unitAr1 = "square mile"; 
+  
+  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4 && mouseY <  height/4+height/20 ) unitAr2 = "mm²";
+  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+height/20 && mouseY <  height/4+2*height/20 ) unitAr2 = "cm²";
+  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+2*height/20 && mouseY <  height/4+3*height/20 ) unitAr2 = "in²";
+  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+3*height/20 && mouseY <  height/4+4*height/20 ) unitAr2 = "dm²";
+  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+4*height/20 && mouseY <  height/4+5*height/20 ) unitAr2 = "ft²";
+  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+5*height/20 && mouseY <  height/4+6*height/20 ) unitAr2 = "m²";
+  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+6*height/20 && mouseY <  height/4+7*height/20 ) unitAr2 = "are(a) / dam²";
+  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+7*height/20 && mouseY <  height/4+8*height/20 ) unitAr2 = "hectare(ha)";
+  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+8*height/20 && mouseY <  height/4+9*height/20 ) unitAr2 = "km²"; 
+  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+9*height/20 && mouseY <  height/4+10*height/20 ) unitAr2 = "square mile"; 
+  
 }
 
 void convertsArea(){
+  if ( unitAr1 == "mm²" && unitAr2 == "mm²" ) area2S = area1S;
+  if ( unitAr1 == "mm²" && unitAr2 == "cm²" ) area2S = str( float(area1S) * 0.01 );
+  if ( unitAr1 == "mm²" && unitAr2 == "in²" ) area2S = str( float(area1S) * 0.0015500031 );
+  if ( unitAr1 == "mm²" && unitAr2 == "dm²" ) area2S = str( float(area1S) * 0.0001 );
+  if ( unitAr1 == "mm²" && unitAr2 == "ft²" ) area2S = str( float(area1S) * 1.07639104 * pow(10, -5) );
+  if ( unitAr1 == "mm²" && unitAr2 == "m²" ) area2S = str( float(area1S) * 1.0 * pow(10, -6) );
+  if ( unitAr1 == "mm²" && unitAr2 == "are(a) / dam²" ) area2S = str( float(area1S) * 1.0 * pow(10, -8) );
+  if ( unitAr1 == "mm²" && unitAr2 == "hectare(ha)" ) area2S = str( float(area1S) * 1.0 * pow(10, -10) ); 
+  if ( unitAr1 == "mm²" && unitAr2 == "km²" ) area2S = str( float(area1S) * 1.0 * pow(10, -12) );
+  if ( unitAr1 == "mm²" && unitAr2 == "square mile" ) area2S = str( float(area1S) * 3.86102159 * pow(10, -13) );
+  
+  if ( unitAr1 == "cm²" && unitAr2 == "mm²" ) area2S = str( float(area1S) * 100 );
+  if ( unitAr1 == "cm²" && unitAr2 == "cm²" ) area2S = area1S;
+  if ( unitAr1 == "cm²" && unitAr2 == "in²" ) area2S = str( float(area1S) * 0.15500031 );
+  if ( unitAr1 == "cm²" && unitAr2 == "dm²" ) area2S = str( float(area1S) * 0.01 );
+  if ( unitAr1 == "cm²" && unitAr2 == "ft²" ) area2S = str( float(area1S) * 0.00107639104 );
+  if ( unitAr1 == "cm²" && unitAr2 == "m²" ) area2S = str( float(area1S) * 1.0 * pow(10, -4) );
+  if ( unitAr1 == "cm²" && unitAr2 == "are(a) / dam²" ) area2S = str( float(area1S) * 1.0 * pow(10, -6) );
+  if ( unitAr1 == "cm²" && unitAr2 == "hectare(ha)" ) area2S = str( float(area1S) * 1.0 * pow(10, -8) ); 
+  if ( unitAr1 == "cm²" && unitAr2 == "km²" ) area2S = str( float(area1S) * 1.0 * pow(10, -10) );
+  if ( unitAr1 == "cm²" && unitAr2 == "square mile" ) area2S = str( float(area1S) * 3.86102159 * pow(10, -11) );
+  
+  if ( unitAr1 == "in²" && unitAr2 == "mm²" ) area2S = str( float(area1S) * 645.16 );
+  if ( unitAr1 == "in²" && unitAr2 == "cm²" ) area2S = str( float(area1S) * 6.4516 );
+  if ( unitAr1 == "in²" && unitAr2 == "in²" ) area2S = area1S;
+  if ( unitAr1 == "in²" && unitAr2 == "dm²" ) area2S = str( float(area1S) * 0.064516 );
+  if ( unitAr1 == "in²" && unitAr2 == "ft²" ) area2S = str( float(area1S) * 0.00694444444 );
+  if ( unitAr1 == "in²" && unitAr2 == "m²" ) area2S = str( float(area1S) * 0.00064516 );
+  if ( unitAr1 == "in²" && unitAr2 == "are(a) / dam²" ) area2S = str( float(area1S) * 6.4516 * pow(10, -6) );
+  if ( unitAr1 == "in²" && unitAr2 == "hectare(ha)" ) area2S = str( float(area1S) * 6.4516 * pow(10, -8) ); 
+  if ( unitAr1 == "in²" && unitAr2 == "km²" ) area2S = str( float(area1S) * 6.4516 * pow(10, -10) );
+  if ( unitAr1 == "in²" && unitAr2 == "square mile" ) area2S = str( float(area1S) * 2.49097669 * pow(10, -10) );
+  
+  if ( unitAr1 == "dm²" && unitAr2 == "mm²" ) area2S = str( float(area1S) * 1.0 * pow(10, 4) );
+  if ( unitAr1 == "dm²" && unitAr2 == "cm²" ) area2S = str( float(area1S) * 100 );
+  if ( unitAr1 == "dm²" && unitAr2 == "in²" ) area2S = str( float(area1S) * 15.500031 );
+  if ( unitAr1 == "dm²" && unitAr2 == "dm²" ) area2S = area1S;
+  if ( unitAr1 == "dm²" && unitAr2 == "ft²" ) area2S = str( float(area1S) * 0.107639104  );
+  if ( unitAr1 == "dm²" && unitAr2 == "m²" ) area2S = str( float(area1S) * 0.01 );
+  if ( unitAr1 == "dm²" && unitAr2 == "are(a) / dam²" ) area2S = str( float(area1S) * 0.0001 );
+  if ( unitAr1 == "dm²" && unitAr2 == "hectare(ha)" ) area2S = str( float(area1S) * 1.0 * pow(10, -6) ); 
+  if ( unitAr1 == "dm²" && unitAr2 == "km²" ) area2S = str( float(area1S) * 1.0 * pow(10, -8) );
+  if ( unitAr1 == "dm²" && unitAr2 == "square mile" ) area2S = str( float(area1S) * 3.86102159 * pow(10, -9) );
+  
+  if ( unitAr1 == "ft²" && unitAr2 == "mm²" ) area2S = str( float(area1S) * 92903.04 );
+  if ( unitAr1 == "ft²" && unitAr2 == "cm²" ) area2S = str( float(area1S) * 929.0304 );
+  if ( unitAr1 == "ft²" && unitAr2 == "in²" ) area2S = str( float(area1S) * 144 );
+  if ( unitAr1 == "ft²" && unitAr2 == "dm²" ) area2S = str( float(area1S) * 9.290304 );
+  if ( unitAr1 == "ft²" && unitAr2 == "ft²" ) area2S = area1S;
+  if ( unitAr1 == "ft²" && unitAr2 == "m²" ) area2S = str( float(area1S) * 0.09290304 );
+  if ( unitAr1 == "ft²" && unitAr2 == "are(a) / dam²" ) area2S = str( float(area1S) * 0.0009290304 );
+  if ( unitAr1 == "ft²" && unitAr2 == "hectare(ha)" ) area2S = str( float(area1S) * 9.290304 * pow(10, -6) ); 
+  if ( unitAr1 == "ft²" && unitAr2 == "km²" ) area2S = str( float(area1S) * 9.290304 * 1.0 * pow(10, -8) );
+  if ( unitAr1 == "ft²" && unitAr2 == "square mile" ) area2S = str( float(area1S) * 3.58700643  * pow(10, -8) );
+  
+  if ( unitAr1 == "m²" && unitAr2 == "mm²" ) area2S = str( float(area1S) * 1.0 * pow(10, 6) );
+  if ( unitAr1 == "m²" && unitAr2 == "cm²" ) area2S = str( float(area1S) * 1.0 * pow(10, 4) );
+  if ( unitAr1 == "m²" && unitAr2 == "in²" ) area2S = str( float(area1S) * 1550.0031 );
+  if ( unitAr1 == "m²" && unitAr2 == "dm²" ) area2S = str( float(area1S) * 100 );
+  if ( unitAr1 == "m²" && unitAr2 == "ft²" ) area2S = str( float(area1S) * 10.7639104 );
+  if ( unitAr1 == "m²" && unitAr2 == "m²" ) area2S = area1S;
+  if ( unitAr1 == "m²" && unitAr2 == "are(a) / dam²" ) area2S = str( float(area1S) * 0.01 );
+  if ( unitAr1 == "m²" && unitAr2 == "hectare(ha)" ) area2S = str( float(area1S) * 1.0 * pow(10, -4) ); 
+  if ( unitAr1 == "m²" && unitAr2 == "km²" ) area2S = str( float(area1S) * 1.0 * pow(10, -6) );
+  if ( unitAr1 == "m²" && unitAr2 == "square mile" ) area2S = str( float(area1S) * 3.86102159 * pow(10, -7) );
+  
+  if ( unitAr1 == "are(a) / dam²" && unitAr2 == "mm²" ) area2S = str( float(area1S) * 1.0 * pow(10, 8) );
+  if ( unitAr1 == "are(a) / dam²" && unitAr2 == "cm²" ) area2S = str( float(area1S) * 1.0 * pow(10, 6) );
+  if ( unitAr1 == "are(a) / dam²" && unitAr2 == "in²" ) area2S = str( float(area1S) * 155000.31 );
+  if ( unitAr1 == "are(a) / dam²" && unitAr2 == "dm²" ) area2S = str( float(area1S) * 1.0 * pow(10, 4));
+  if ( unitAr1 == "are(a) / dam²" && unitAr2 == "ft²" ) area2S = str( float(area1S) * 1076.39104 );
+  if ( unitAr1 == "are(a) / dam²" && unitAr2 == "m²" ) area2S = str( float(area1S) * 100 );
+  if ( unitAr1 == "are(a) / dam²" && unitAr2 == "are(a) / dam²" ) area2S = area1S;
+  if ( unitAr1 == "are(a) / dam²" && unitAr2 == "hectare(ha)" ) area2S = str( float(area1S) * 0.01 ); 
+  if ( unitAr1 == "are(a) / dam²" && unitAr2 == "km²" ) area2S = str( float(area1S) * 1.0 * pow(10, -4) );
+  if ( unitAr1 == "are(a) / dam²" && unitAr2 == "square mile" ) area2S = str( float(area1S) * 3.86102159 * pow(10, -5) );
+  
+  if ( unitAr1 == "hectare(ha)" && unitAr2 == "mm²" ) area2S = str( float(area1S) * 1.0 * pow(10, 10) );
+  if ( unitAr1 == "hectare(ha)" && unitAr2 == "cm²" ) area2S = str( float(area1S) * 1.0 * pow(10, 8) );
+  if ( unitAr1 == "hectare(ha)" && unitAr2 == "in²" ) area2S = str( float(area1S) * 15500031 );
+  if ( unitAr1 == "hectare(ha)" && unitAr2 == "dm²" ) area2S = str( float(area1S) * 1.0 * pow(10, 6));
+  if ( unitAr1 == "hectare(ha)" && unitAr2 == "ft²" ) area2S = str( float(area1S) * 107639.104 );
+  if ( unitAr1 == "hectare(ha)" && unitAr2 == "m²" ) area2S = str( float(area1S) * 1.0 * pow(10, 4) );
+  if ( unitAr1 == "hectare(ha)" && unitAr2 == "are(a) / dam²" ) area2S = str( float(area1S) * 100 );
+  if ( unitAr1 == "hectare(ha)" && unitAr2 == "hectare(ha)" ) area2S = area1S; 
+  if ( unitAr1 == "hectare(ha)" && unitAr2 == "km²" ) area2S = str( float(area1S) * 0.01 );
+  if ( unitAr1 == "hectare(ha)" && unitAr2 == "square mile" ) area2S = str( float(area1S) * 0.00386102159 );
+  
+  if ( unitAr1 == "km²" && unitAr2 == "mm²" ) area2S = str( float(area1S) * 1.0 * pow(10, 12) );
+  if ( unitAr1 == "km²" && unitAr2 == "cm²" ) area2S = str( float(area1S) * 1.0 * pow(10, 10) );
+  if ( unitAr1 == "km²" && unitAr2 == "in²" ) area2S = str( float(area1S) * 1.5500031 * pow(10, 9) );
+  if ( unitAr1 == "km²" && unitAr2 == "dm²" ) area2S = str( float(area1S) * 1.0 * pow(10, 8));
+  if ( unitAr1 == "km²" && unitAr2 == "ft²" ) area2S = str( float(area1S) * 10763910.4 );
+  if ( unitAr1 == "km²" && unitAr2 == "m²" ) area2S = str( float(area1S) * 1.0 * pow(10, 6) );
+  if ( unitAr1 == "km²" && unitAr2 == "are(a) / dam²" ) area2S = str( float(area1S) * 1.0 * pow(10, 4) );
+  if ( unitAr1 == "km²" && unitAr2 == "hectare(ha)" ) area2S = str( float(area1S) * 100 );
+  if ( unitAr1 == "km²" && unitAr2 == "km²" ) area2S = area1S; 
+  if ( unitAr1 == "km²" && unitAr2 == "square mile" ) area2S = str( float(area1S) * 0.386102159 );
+  
+  if ( unitAr1 == "square mile" && unitAr2 == "mm²" ) area2S = str( float(area1S) * 2.58998811 * pow(10, 12)  );
+  if ( unitAr1 == "square mile" && unitAr2 == "cm²" ) area2S = str( float(area1S) * 2.58998811 * pow(10, 10) );
+  if ( unitAr1 == "square mile" && unitAr2 == "in²" ) area2S = str( float(area1S) * 40144896 * 100 );
+  if ( unitAr1 == "square mile" && unitAr2 == "dm²" ) area2S = str( float(area1S) * 2.58998811 * pow(10, 8)  );
+  if ( unitAr1 == "square mile" && unitAr2 == "ft²" ) area2S = str( float(area1S) * 27878400 );
+  if ( unitAr1 == "square mile" && unitAr2 == "m²" ) area2S = str( float(area1S) * 2.58998811 * pow(10, 6)  );
+  if ( unitAr1 == "square mile" && unitAr2 == "are(a) / dam²" ) area2S = str( float(area1S) * 2.58998811 * pow(10, 4) );
+  if ( unitAr1 == "square mile" && unitAr2 == "hectare(ha)" ) area2S = str( float(area1S) * 258.998811 );
+  if ( unitAr1 == "square mile" && unitAr2 == "km²" ) area2S = str( float(area1S) * 2.58998811 );
+  if ( unitAr1 == "square mile" && unitAr2 == "square mile" ) area2S = area1S; 
 }
