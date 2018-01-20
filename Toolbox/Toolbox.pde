@@ -101,6 +101,7 @@ void draw(){
   if ( page == -1 && pageUC == 1 ) angleConverter();
   if ( page == -1 && pageUC == 2 ) areaConverter();
   if ( page == -1 && pageUC == 3 ) lengthConverter();
+  if ( page == -1 && pageUC == 4 ) metricConverter();
   
   if(activeKeyboard) keyboard();
   
@@ -115,10 +116,11 @@ void mousePressed(){
   if ( page == 5 ) inclinationClick();
   if ( page == 6 ) bubbleLevelClick();
   if ( page == 7 ) unitConverterClick();
-  if(activeKeyboard) keyboardClick();
+  if (activeKeyboard) keyboardClick();
   if ( page == -1 && pageUC == 1 ) angleConverterClick();
   if ( page == -1 && pageUC == 2 ) areaConverterClick();
   if ( page == -1 && pageUC == 3 ) lengthConverterClick();
+  if ( page == -1 && pageUC == 4 ) metricConverterClick();
   
 }
 
