@@ -104,6 +104,7 @@ void draw(){
   if ( page == -1 && pageUC == 4 ) metricConverter();
   if ( page == -1 && pageUC == 5 ) temperatureConverter();
   if ( page == -1 && pageUC == 6 ) timeConverter();
+  if ( page == -1 && pageUC == 7 ) volumeConverter();
   
   if(activeKeyboard) keyboard();
   
@@ -125,6 +126,7 @@ void mousePressed(){
   if ( page == -1 && pageUC == 4 ) metricConverterClick();
   if ( page == -1 && pageUC == 5 ) temperatureConverterClick(); 
   if ( page == -1 && pageUC == 6 ) timeConverterClick();
+  if ( page == -1 && pageUC == 7 ) volumeConverterClick();
 }
 
 void keyReleased() {
