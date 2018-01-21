@@ -31,7 +31,7 @@ void timeConverter(){
   fill(#000000);
   text(time1S, 20, height/6.8);  
   text(time2S, width/2+40, height/6.8);  
-  textSize(height/30);
+  textSize(height/25);
   text(unitT1, 20, height/5);  
   text(unitT2, width/2+40, height/5);
 

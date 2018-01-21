@@ -31,7 +31,7 @@ void metricConverter(){
   fill(#000000);
   text(metric1S, 20, height/6.8);  
   text(metric2S, width/2+40, height/6.8);  
-  textSize(height/30);
+  textSize(height/25);
   text(unitM1, 20, height/5);  
   text(unitM2, width/2+40, height/5);
 
@@ -82,7 +82,7 @@ void metricConverter(){
   else fill(#ffffff); 
   rect(10, height/4+7*height/20, width/2-40, height/20);
   fill(#000000);
-  text("deka (da)", 20, height/3.8+7*height/20); 
+  text("deca (da)", 20, height/3.8+7*height/20); 
   if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+8*height/20 && mouseY <  height/4+9*height/20 ) fill(#aaaaaa);
   else fill(#ffffff); 
   rect(10, height/4+8*height/20, width/2-40, height/20);
@@ -148,7 +148,7 @@ void metricConverter(){
   else fill(#ffffff); 
   rect(width/2+30, height/4+7*height/20, width/2-40, height/20);
   fill(#000000);
-  text("deka (da)", width/2+40, height/3.8+7*height/20); 
+  text("deca (da)", width/2+40, height/3.8+7*height/20); 
   if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+8*height/20 && mouseY <  height/4+9*height/20 ) fill(#aaaaaa);
   else fill(#ffffff); 
   rect(width/2+30, height/4+8*height/20, width/2-40, height/20);
@@ -192,7 +192,7 @@ void metricConverterClick(){
   if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+4*height/20 && mouseY <  height/4+5*height/20 ) unitM1 = "centi (c)";
   if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+5*height/20 && mouseY <  height/4+6*height/20 ) unitM1 = "deci (d)";
   if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+6*height/20 && mouseY <  height/4+7*height/20 ) unitM1 = "base";
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+7*height/20 && mouseY <  height/4+8*height/20 ) unitM1 = "deka (da)";
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+7*height/20 && mouseY <  height/4+8*height/20 ) unitM1 = "deca (da)";
   if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+8*height/20 && mouseY <  height/4+9*height/20 ) unitM1 = "hecto (h)"; 
   if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+9*height/20 && mouseY <  height/4+10*height/20 ) unitM1 = "kilo (k)"; 
   if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+10*height/20 && mouseY <  height/4+11*height/20 ) unitM1 = "mega (M)";   
@@ -206,7 +206,7 @@ void metricConverterClick(){
   if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+4*height/20 && mouseY <  height/4+5*height/20 ) unitM2 = "centi (c)";
   if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+5*height/20 && mouseY <  height/4+6*height/20 ) unitM2 = "deci (d)";
   if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+6*height/20 && mouseY <  height/4+7*height/20 ) unitM2 = "base";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+7*height/20 && mouseY <  height/4+8*height/20 ) unitM2 = "deka (da)";
+  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+7*height/20 && mouseY <  height/4+8*height/20 ) unitM2 = "deca (da)";
   if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+8*height/20 && mouseY <  height/4+9*height/20 ) unitM2 = "hecto (h)"; 
   if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+9*height/20 && mouseY <  height/4+10*height/20 ) unitM2 = "kilo (k)";  
   if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+10*height/20 && mouseY <  height/4+11*height/20 ) unitM2 = "mega (M)"; 
@@ -223,7 +223,7 @@ void convertsMetric(){
   if ( unitM1 == "pico (p)" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -10) );
   if ( unitM1 == "pico (p)" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -11) );
   if ( unitM1 == "pico (p)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -12) );
-  if ( unitM1 == "pico (p)" && unitM2 == "deka (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -13) ); 
+  if ( unitM1 == "pico (p)" && unitM2 == "deca (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -13) ); 
   if ( unitM1 == "pico (p)" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -14) );
   if ( unitM1 == "pico (p)" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -15) );
   if ( unitM1 == "pico (p)" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -18) );
@@ -237,7 +237,7 @@ void convertsMetric(){
   if ( unitM1 == "nano (n)" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -7) );
   if ( unitM1 == "nano (n)" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -8) );
   if ( unitM1 == "nano (n)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -9) );
-  if ( unitM1 == "nano (n)" && unitM2 == "deka (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -10) ); 
+  if ( unitM1 == "nano (n)" && unitM2 == "deca (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -10) ); 
   if ( unitM1 == "nano (n)" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -11) );
   if ( unitM1 == "nano (n)" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -12) );
   if ( unitM1 == "nano (n)" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -15) );
@@ -251,7 +251,7 @@ void convertsMetric(){
   if ( unitM1 == "micro (µ)" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -4) );
   if ( unitM1 == "micro (µ)" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -5) );
   if ( unitM1 == "micro (µ)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -6) );
-  if ( unitM1 == "micro (µ)" && unitM2 == "deka (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -7) ); 
+  if ( unitM1 == "micro (µ)" && unitM2 == "deca (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -7) ); 
   if ( unitM1 == "micro (µ)" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -8) );
   if ( unitM1 == "micro (µ)" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -9) );
   if ( unitM1 == "micro (µ)" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -12) );
@@ -265,7 +265,7 @@ void convertsMetric(){
   if ( unitM1 == "milli (m)" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -1) );
   if ( unitM1 == "milli (m)" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -2) );
   if ( unitM1 == "milli (m)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -3) );
-  if ( unitM1 == "milli (m)" && unitM2 == "deka (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -4) ); 
+  if ( unitM1 == "milli (m)" && unitM2 == "deca (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -4) ); 
   if ( unitM1 == "milli (m)" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -5) );
   if ( unitM1 == "milli (m)" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -6) );
   if ( unitM1 == "milli (m)" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -9) );
@@ -279,7 +279,7 @@ void convertsMetric(){
   if ( unitM1 == "centi (c)" && unitM2 == "centi (c)" ) metric2S = metric1S;
   if ( unitM1 == "centi (c)" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -1) );
   if ( unitM1 == "centi (c)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -2) );
-  if ( unitM1 == "centi (c)" && unitM2 == "deka (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -3) ); 
+  if ( unitM1 == "centi (c)" && unitM2 == "deca (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -3) ); 
   if ( unitM1 == "centi (c)" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -4) );
   if ( unitM1 == "centi (c)" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -5) );
   if ( unitM1 == "centi (c)" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -8) );
@@ -293,7 +293,7 @@ void convertsMetric(){
   if ( unitM1 == "deci (d)" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 1) );
   if ( unitM1 == "deci (d)" && unitM2 == "deci (d)" ) metric2S = metric1S;
   if ( unitM1 == "deci (d)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -1) );
-  if ( unitM1 == "deci (d)" && unitM2 == "deka (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -2) ); 
+  if ( unitM1 == "deci (d)" && unitM2 == "deca (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -2) ); 
   if ( unitM1 == "deci (d)" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -3) );
   if ( unitM1 == "deci (d)" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -4) );
   if ( unitM1 == "deci (d)" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -7) );
@@ -307,26 +307,26 @@ void convertsMetric(){
   if ( unitM1 == "base" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 2) );
   if ( unitM1 == "base" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 1) );
   if ( unitM1 == "base" && unitM2 == "base" ) metric2S = metric1S;
-  if ( unitM1 == "base" && unitM2 == "deka (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -1) ); 
+  if ( unitM1 == "base" && unitM2 == "deca (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -1) ); 
   if ( unitM1 == "base" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -2) );
   if ( unitM1 == "base" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -3) );
   if ( unitM1 == "base" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -6) );
   if ( unitM1 == "base" && unitM2 == "giga (G)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -9) );
   if ( unitM1 == "base" && unitM2 == "tera (T)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -12) );
   
-  if ( unitM1 == "deka (da)" && unitM2 == "pico (p)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 13) );
-  if ( unitM1 == "deka (da)" && unitM2 == "nano (n)" )  metric2S = str( float(metric1S) * 1.0 * pow(10, 10) );
-  if ( unitM1 == "deka (da)" && unitM2 == "micro (µ)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 7) );
-  if ( unitM1 == "deka (da)" && unitM2 == "milli (m)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 4) );
-  if ( unitM1 == "deka (da)" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 3) );
-  if ( unitM1 == "deka (da)" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 2) );
-  if ( unitM1 == "deka (da)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 1) );
-  if ( unitM1 == "deka (da)" && unitM2 == "deka (da)" ) metric2S = metric1S; 
-  if ( unitM1 == "deka (da)" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -1) );
-  if ( unitM1 == "deka (da)" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -2) );
-  if ( unitM1 == "deka (da)" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -5) );
-  if ( unitM1 == "deka (da)" && unitM2 == "giga (G)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -8) );
-  if ( unitM1 == "deka (da)" && unitM2 == "tera (T)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -11) );
+  if ( unitM1 == "deca (da)" && unitM2 == "pico (p)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 13) );
+  if ( unitM1 == "deca (da)" && unitM2 == "nano (n)" )  metric2S = str( float(metric1S) * 1.0 * pow(10, 10) );
+  if ( unitM1 == "deca (da)" && unitM2 == "micro (µ)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 7) );
+  if ( unitM1 == "deca (da)" && unitM2 == "milli (m)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 4) );
+  if ( unitM1 == "deca (da)" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 3) );
+  if ( unitM1 == "deca (da)" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 2) );
+  if ( unitM1 == "deca (da)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 1) );
+  if ( unitM1 == "deca (da)" && unitM2 == "deca (da)" ) metric2S = metric1S; 
+  if ( unitM1 == "deca (da)" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -1) );
+  if ( unitM1 == "deca (da)" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -2) );
+  if ( unitM1 == "deca (da)" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -5) );
+  if ( unitM1 == "deca (da)" && unitM2 == "giga (G)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -8) );
+  if ( unitM1 == "deca (da)" && unitM2 == "tera (T)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -11) );
   
   if ( unitM1 == "hecto (h)" && unitM2 == "pico (p)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 14) );
   if ( unitM1 == "hecto (h)" && unitM2 == "nano (n)" )  metric2S = str( float(metric1S) * 1.0 * pow(10, 11) );
@@ -335,7 +335,7 @@ void convertsMetric(){
   if ( unitM1 == "hecto (h)" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 4) );
   if ( unitM1 == "hecto (h)" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 3) );
   if ( unitM1 == "hecto (h)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 2) );
-  if ( unitM1 == "hecto (h)" && unitM2 == "deka (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 1) ); 
+  if ( unitM1 == "hecto (h)" && unitM2 == "deca (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 1) ); 
   if ( unitM1 == "hecto (h)" && unitM2 == "hecto (h)" ) metric2S = metric1S;
   if ( unitM1 == "hecto (h)" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -1) );
   if ( unitM1 == "hecto (h)" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -4) );
@@ -349,7 +349,7 @@ void convertsMetric(){
   if ( unitM1 == "kilo (k)" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 5) );
   if ( unitM1 == "kilo (k)" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 4) );
   if ( unitM1 == "kilo (k)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 3) );
-  if ( unitM1 == "kilo (k)" && unitM2 == "deka (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 2) ); 
+  if ( unitM1 == "kilo (k)" && unitM2 == "deca (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 2) ); 
   if ( unitM1 == "kilo (k)" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 1) );
   if ( unitM1 == "kilo (k)" && unitM2 == "kilo (k)" ) metric2S = metric1S;
   if ( unitM1 == "kilo (k)" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -3) );
@@ -363,7 +363,7 @@ void convertsMetric(){
   if ( unitM1 == "mega (M)" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 8) );
   if ( unitM1 == "mega (M)" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 7) );
   if ( unitM1 == "mega (M)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 6) );
-  if ( unitM1 == "mega (M)" && unitM2 == "deka (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 5) ); 
+  if ( unitM1 == "mega (M)" && unitM2 == "deca (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 5) ); 
   if ( unitM1 == "mega (M)" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 4) );
   if ( unitM1 == "mega (M)" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 3) );
   if ( unitM1 == "mega (M)" && unitM2 == "mega (M)" ) metric2S = metric1S;
@@ -377,7 +377,7 @@ void convertsMetric(){
   if ( unitM1 == "giga (G)" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 11) );
   if ( unitM1 == "giga (G)" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 10) );
   if ( unitM1 == "giga (G)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 9) );
-  if ( unitM1 == "giga (G)" && unitM2 == "deka (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 8) ); 
+  if ( unitM1 == "giga (G)" && unitM2 == "deca (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 8) ); 
   if ( unitM1 == "giga (G)" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 7) );
   if ( unitM1 == "giga (G)" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 6) );
   if ( unitM1 == "giga (G)" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 3) );
@@ -391,7 +391,7 @@ void convertsMetric(){
   if ( unitM1 == "tera (T)" && unitM2 == "centi (c)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 14) );
   if ( unitM1 == "tera (T)" && unitM2 == "deci (d)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 13) );
   if ( unitM1 == "tera (T)" && unitM2 == "base" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 12) );
-  if ( unitM1 == "tera (T)" && unitM2 == "deka (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 11) ); 
+  if ( unitM1 == "tera (T)" && unitM2 == "deca (da)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 11) ); 
   if ( unitM1 == "tera (T)" && unitM2 == "hecto (h)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 10) );
   if ( unitM1 == "tera (T)" && unitM2 == "kilo (k)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 9) );
   if ( unitM1 == "tera (T)" && unitM2 == "mega (M)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, 6) );
