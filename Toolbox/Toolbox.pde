@@ -129,7 +129,8 @@ void mousePressed(){
 
 void keyReleased() {
     if (key == CODED && keyCode == android.view.KeyEvent.KEYCODE_BACK) {
-      page = 0;
+      if (page >= 1) page = 0;
+      if (page == -1) page = 7;
     }
 }
 
