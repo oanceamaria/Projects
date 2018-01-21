@@ -4,16 +4,20 @@ String temperature2S = "";
 String unitTemp1 = "";
 String unitTemp2 = "";
 
+String negativeValue = "";
+String msgNeg = "";
+String btnMSG = "NEGATIVE";
+
 void temperatureConverter(){
   strokeWeight(3);
   stroke(#0000ff);
   fill(#0000ff);
   textAlign(CENTER, TOP);
-  textSize(height/25);
+  textSize(height/22.5);
   imageMode(CORNER);
   rect(0, 0, width, height/9 );
   fill(#ffffff);
-  text("Temperature Converter", width/2+80, 40);
+  text("Temperature Converter", width/2+60, 40);
   image(backImg, 20, 20, 110, 80);
   
   strokeWeight(6);
@@ -35,7 +39,7 @@ void temperatureConverter(){
   text(unitTemp1, 20, height/5);  
   text(unitTemp2, width/2+40, height/5);
 
- if (valueKeyboard.length() <= 15 ) temperature1S = valueKeyboard; 
+ if (valueKeyboard.length() <= 15 ) temperature1S = negativeValue + valueKeyboard; 
  if (unitTemp1 != "" && unitTemp2 != "" && temperature1S != "" ) convertsTemperature();
   
   textSize(height/35);
@@ -75,13 +79,27 @@ void temperatureConverter(){
   fill(#000000);
   text("kelvin (K)", width/2+40, height/3.8+2*height/20); 
   
+  strokeWeight(6);
+  stroke(#b3b3b3);
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/2.3 && mouseY <  height/2.3+height/15 ) fill(#aaaaaa);
+  else fill(#ffffff); 
+  rect(10, height/2.3, width/2-40, height/15, 15);
+  fill(#000000);
+  textAlign(CENTER, TOP);
+  textSize(height/30);
+  fill(#000000);
+  text(btnMSG, width/4-10, height/2.2);  
+  textAlign(LEFT, TOP);
+  textSize(height/35);
+  text(msgNeg, width/2-10, height/2.2);  
 }
 
 void temperatureConverterClick(){
   if ( mouseX > 20 && mouseX < 130 && mouseY > 20 && mouseY < 100 ) {
     page = 7;
     activeKeyboard = false;
-    unitTemp1 = unitTemp2 = temperature1S = temperature2S = valueKeyboard = "";
+    unitTemp1 = unitTemp2 = temperature1S = temperature2S = valueKeyboard = negativeValue = msgNeg = "";
+    btnMSG = "NEGATIVE";
   }
 
   if ( mouseX > 10 && mouseX < width/2-30 && mouseY > height/7 && mouseY < height/7+height/12 ) activeKeyboard = true;
@@ -94,20 +112,31 @@ void temperatureConverterClick(){
   if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+height/20 && mouseY <  height/4+2*height/20 ) unitTemp2 = "Fahrenheit (°F)";
   if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+2*height/20 && mouseY <  height/4+3*height/20 ) unitTemp2 = "kelvin (K)";
   
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/2.3 && mouseY <  height/2.3+height/15 ) {
+    if (negativeValue == "") {
+      negativeValue = "-";
+      msgNeg = "Negative value is set!";
+      btnMSG = "POSITIVE";
+    }
+    else {
+      negativeValue = msgNeg = "";
+      btnMSG = "NEGATIVE";
+    }
+  }
+  
 }
 
 void convertsTemperature(){
-  /*
   if ( unitTemp1 == "Celsius (°C)" && unitTemp2 == "Celsius (°C)" ) temperature2S = temperature1S;
-  if ( unitTemp1 == "Celsius (°C)" && unitTemp2 == "Fahrenheit (°F)" ) temperature2S = str( float(temperature1S) * 0.01 );
-  if ( unitTemp1 == "Celsius (°C)" && unitTemp2 == "kelvin (K)" ) temperature2S = str( float(temperature1S) * 0.0015500031 );;
+  if ( unitTemp1 == "Celsius (°C)" && unitTemp2 == "Fahrenheit (°F)" ) temperature2S = str( float(temperature1S) * 1.8 + 32 );
+  if ( unitTemp1 == "Celsius (°C)" && unitTemp2 == "kelvin (K)" ) temperature2S = str( float(temperature1S) + 273.15 );
   
-  if ( unitTemp1 == "Fahrenheit (°F)" && unitTemp2 == "Celsius (°C)" ) temperature2S = str( float(temperature1S) * 100 );
+  if ( unitTemp1 == "Fahrenheit (°F)" && unitTemp2 == "Celsius (°C)" ) temperature2S = str( ( float(temperature1S) - 32 ) / 1.8 );
   if ( unitTemp1 == "Fahrenheit (°F)" && unitTemp2 == "Fahrenheit (°F)" ) temperature2S = temperature1S;
-  if ( unitTemp1 == "Fahrenheit (°F)" && unitTemp2 == "kelvin (K)" ) temperature2S = str( float(temperature1S) * 0.15500031 );
+  if ( unitTemp1 == "Fahrenheit (°F)" && unitTemp2 == "kelvin (K)" ) temperature2S = str( ( float(temperature1S) + 459.67 ) * 5 / 9 );
   
-  if ( unitTemp1 == "kelvin (K)" && unitTemp2 == "Celsius (°C)" ) temperature2S = str( float(temperature1S) * 645.16 );
-  if ( unitTemp1 == "kelvin (K)" && unitTemp2 == "Fahrenheit (°F)" ) temperature2S = str( float(temperature1S) * 6.4516 );
+  if ( unitTemp1 == "kelvin (K)" && unitTemp2 == "Celsius (°C)" ) temperature2S = str( float(temperature1S) - 273.15 );
+  if ( unitTemp1 == "kelvin (K)" && unitTemp2 == "Fahrenheit (°F)" ) temperature2S = str( ( float(temperature1S) * 9 / 5 ) - 459.67 );
   if ( unitTemp1 == "kelvin (K)" && unitTemp2 == "kelvin (K)" ) temperature2S = temperature1S;
-  */
+  
 }
