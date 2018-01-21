@@ -27,7 +27,7 @@ void unitConverter(){
   rect(-2, height/10 + 3*height/8.9, width+4, height/8.9 );
   text("Metric Converter", width/2, height/7 + 3*height/8.9);
   rect(-2, height/10 + 4*height/8.9, width+4, height/8.9 );
-  text("Temperature Converte", width/2, height/7 + 4*height/8.9);
+  text("Temperature Converter", width/2, height/7 + 4*height/8.9);
   rect(-2, height/10 + 5*height/8.9, width+4, height/8.9 );
   text("Time Converter", width/2, height/7 + 5*height/8.9);
   rect(-2, height/10 + 6*height/8.9, width+4, height/8.9 );
@@ -57,7 +57,10 @@ void unitConverterClick(){
     pageUC = 4;
     page = -1;
   }
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 4*height/8.9 && mouseY < height/10 + 5*height/8.9 ) pageUC = 5;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 4*height/8.9 && mouseY < height/10 + 5*height/8.9 ) {
+    pageUC = 5;
+    page = -1;
+  }
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 5*height/8.9 && mouseY < height/10 + 6*height/8.9 ) pageUC = 6;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 6*height/8.9 && mouseY < height/10 + 7*height/8.9 && pageUC==0) pageUC = 7;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 + 7*height/8.9 && mouseY < height/10 + 8*height/8.9 ) pageUC = 8;

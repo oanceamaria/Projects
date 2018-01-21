@@ -102,6 +102,7 @@ void draw(){
   if ( page == -1 && pageUC == 2 ) areaConverter();
   if ( page == -1 && pageUC == 3 ) lengthConverter();
   if ( page == -1 && pageUC == 4 ) metricConverter();
+  if ( page == -1 && pageUC == 5 ) temperatureConverter();
   
   if(activeKeyboard) keyboard();
   
@@ -121,7 +122,7 @@ void mousePressed(){
   if ( page == -1 && pageUC == 2 ) areaConverterClick();
   if ( page == -1 && pageUC == 3 ) lengthConverterClick();
   if ( page == -1 && pageUC == 4 ) metricConverterClick();
-  
+  if ( page == -1 && pageUC == 5 ) temperatureConverterClick();
 }
 
 void keyReleased() {
