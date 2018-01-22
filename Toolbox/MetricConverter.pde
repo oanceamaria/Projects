@@ -11,10 +11,10 @@ void metricConverter(){
   textAlign(CENTER, TOP);
   textSize(height/20);
   imageMode(CORNER);
-  rect(0, 0, width, height/9 );
+  rect(0, 0, width, height/10 );
   fill(#ffffff);
-  text("Metric Converter", width/2+20, 40);
-  image(backImg, 20, 20, 110, 80);
+  text("Metric Converter", width/2+20, height/30);
+  image(backImg, width/36, height/60, width/6.5, height/15);
   
   strokeWeight(6);
   stroke(#b3b3b3);
@@ -185,34 +185,35 @@ void metricConverterClick(){
 
   if ( mouseX > 10 && mouseX < width/2-30 && mouseY > height/7 && mouseY < height/7+height/12 ) activeKeyboard = true;
   
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4 && mouseY <  height/4+height/20 ) unitM1 = "pico (p)";
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+height/20 && mouseY <  height/4+2*height/20 ) unitM1 = "nano (n)";
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+2*height/20 && mouseY <  height/4+3*height/20 ) unitM1 = "micro (µ)";
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+3*height/20 && mouseY <  height/4+4*height/20 ) unitM1 = "milli (m)";
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+4*height/20 && mouseY <  height/4+5*height/20 ) unitM1 = "centi (c)";
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+5*height/20 && mouseY <  height/4+6*height/20 ) unitM1 = "deci (d)";
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+6*height/20 && mouseY <  height/4+7*height/20 ) unitM1 = "base";
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+7*height/20 && mouseY <  height/4+8*height/20 ) unitM1 = "deca (da)";
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+8*height/20 && mouseY <  height/4+9*height/20 ) unitM1 = "hecto (h)"; 
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+9*height/20 && mouseY <  height/4+10*height/20 ) unitM1 = "kilo (k)"; 
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+10*height/20 && mouseY <  height/4+11*height/20 ) unitM1 = "mega (M)";   
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+11*height/20 && mouseY <  height/4+12*height/20 ) unitM1 = "giga (G)"; 
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+12*height/20 && mouseY <  height/4+13*height/20 ) unitM1 = "tera (T)"; 
-  
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4 && mouseY <  height/4+height/20 ) unitM2 = "pico (p)";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+height/20 && mouseY <  height/4+2*height/20 ) unitM2 = "nano (n)";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+2*height/20 && mouseY <  height/4+3*height/20 ) unitM2 = "micro (µ)";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+3*height/20 && mouseY <  height/4+4*height/20 ) unitM2 = "milli (m)";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+4*height/20 && mouseY <  height/4+5*height/20 ) unitM2 = "centi (c)";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+5*height/20 && mouseY <  height/4+6*height/20 ) unitM2 = "deci (d)";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+6*height/20 && mouseY <  height/4+7*height/20 ) unitM2 = "base";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+7*height/20 && mouseY <  height/4+8*height/20 ) unitM2 = "deca (da)";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+8*height/20 && mouseY <  height/4+9*height/20 ) unitM2 = "hecto (h)"; 
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+9*height/20 && mouseY <  height/4+10*height/20 ) unitM2 = "kilo (k)";  
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+10*height/20 && mouseY <  height/4+11*height/20 ) unitM2 = "mega (M)"; 
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+11*height/20 && mouseY <  height/4+12*height/20 ) unitM2 = "giga (G)"; 
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+12*height/20 && mouseY <  height/4+13*height/20 ) unitM2 = "tera (T)";
-  
+  if(!activeKeyboard) {
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4 && mouseY <  height/4+height/20 ) unitM1 = "pico (p)";
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+height/20 && mouseY <  height/4+2*height/20 ) unitM1 = "nano (n)";
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+2*height/20 && mouseY <  height/4+3*height/20 ) unitM1 = "micro (µ)";
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+3*height/20 && mouseY <  height/4+4*height/20 ) unitM1 = "milli (m)";
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+4*height/20 && mouseY <  height/4+5*height/20 ) unitM1 = "centi (c)";
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+5*height/20 && mouseY <  height/4+6*height/20 ) unitM1 = "deci (d)";
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+6*height/20 && mouseY <  height/4+7*height/20 ) unitM1 = "base";
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+7*height/20 && mouseY <  height/4+8*height/20 ) unitM1 = "deca (da)";
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+8*height/20 && mouseY <  height/4+9*height/20 ) unitM1 = "hecto (h)"; 
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+9*height/20 && mouseY <  height/4+10*height/20 ) unitM1 = "kilo (k)"; 
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+10*height/20 && mouseY <  height/4+11*height/20 ) unitM1 = "mega (M)";   
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+11*height/20 && mouseY <  height/4+12*height/20 ) unitM1 = "giga (G)"; 
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+12*height/20 && mouseY <  height/4+13*height/20 ) unitM1 = "tera (T)"; 
+    
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4 && mouseY <  height/4+height/20 ) unitM2 = "pico (p)";
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+height/20 && mouseY <  height/4+2*height/20 ) unitM2 = "nano (n)";
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+2*height/20 && mouseY <  height/4+3*height/20 ) unitM2 = "micro (µ)";
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+3*height/20 && mouseY <  height/4+4*height/20 ) unitM2 = "milli (m)";
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+4*height/20 && mouseY <  height/4+5*height/20 ) unitM2 = "centi (c)";
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+5*height/20 && mouseY <  height/4+6*height/20 ) unitM2 = "deci (d)";
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+6*height/20 && mouseY <  height/4+7*height/20 ) unitM2 = "base";
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+7*height/20 && mouseY <  height/4+8*height/20 ) unitM2 = "deca (da)";
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+8*height/20 && mouseY <  height/4+9*height/20 ) unitM2 = "hecto (h)"; 
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+9*height/20 && mouseY <  height/4+10*height/20 ) unitM2 = "kilo (k)";  
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+10*height/20 && mouseY <  height/4+11*height/20 ) unitM2 = "mega (M)"; 
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+11*height/20 && mouseY <  height/4+12*height/20 ) unitM2 = "giga (G)"; 
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+12*height/20 && mouseY <  height/4+13*height/20 ) unitM2 = "tera (T)";
+  }
 }
 
 void convertsMetric(){  

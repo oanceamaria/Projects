@@ -21,8 +21,8 @@ void distance(){
   imageMode(CORNER);
   rect(0, 0, width, height/10 );
   fill(#ffffff);
-  text("Distance", width/2, 40);
-  image(backImg, 20, 20, 110, 80);
+  text("Distance", width/2, height/30);
+  image(backImg, width/36, height/60, width/6.5, height/15);
   
   if (state == "STOP" ){
     image(clouds[1], xCloud1, yCloud1, 100, 100);
@@ -62,7 +62,10 @@ void distance(){
   
   if (GPSenabeled){
     if (latitude != 0){
-      rect(width/3, height/8+2*height/3, width/3, height/10);
+      if ( mouseX > width/3 && mouseX < 2*width/3 && mouseY > height/8+2*height/3 && mouseY < height/8+2*height/3+height/10 ) fill(#d9d9d9);
+      else noFill();
+      rect(width/3, height/8+2*height/3, width/3, height/10, 40);
+      fill(#000000);
       text(state, width/2, height/8+2*height/3+40);
     }
     else text("GPS conecting...", width/2, height/8+2*height/3+40);

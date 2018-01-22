@@ -19,8 +19,8 @@ void soundIntenity(){
   imageMode(CORNER);
   rect(0, 0, width, height/10 );
   fill(#ffffff);
-  text("Sound Intensity", width/2, 40);
-  image(backImg, 20, 20, 110, 80);
+  text("Sound Intensity", width/2, height/30);
+  image(backImg, width/36, height/60, width/6.5, height/15);
   
   imageMode(CENTER);
   image(soundMeterImg, width/2, height/2.5, width-100, height/2);

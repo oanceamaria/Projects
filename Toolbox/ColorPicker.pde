@@ -1,4 +1,11 @@
 
+ClipboardManager clipboard;
+ClipData clip;
+Uri uri;
+Intent intentSearch;
+
+color getColor;
+
 void colorPicker(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -8,8 +15,8 @@ void colorPicker(){
   imageMode(CORNER);
   rect(0, 0, width, height/10 );
   fill(#ffffff);
-  text("Color Picker", width/2, 40);
-  image(backImg, 20, 20, 110, 80);
+  text("Color Picker", width/2, height/30);
+  image(backImg, width/36, height/60, width/6.5, height/15);
   
   if (camera != null && camera.isStarted()){
     imageMode(CENTER);
@@ -21,7 +28,7 @@ void colorPicker(){
     popMatrix();
 
     PImage imgCamera = get(0, 0, width, height);
-    color getColor = imgCamera.get( (int)(width/2), (int)(height/2.5) );
+    getColor = imgCamera.get( (int)(width/2), (int)(height/2.5) );
     stroke(#000000);
     fill(getColor);
     rect(width/15+5, height/1.48 ,width/5 ,height/12);
@@ -35,6 +42,22 @@ void colorPicker(){
     text( "Green: "+green(getColor),  width/15+5, height/1.2);
     fill(#0000ff);
     text( "Blue: " +blue(getColor),  width/15+5, height/1.13);
+    
+    strokeWeight(6);
+    stroke(#b3b3b3);
+    textAlign(CENTER, TOP);
+    textSize(height/30);
+    if (mouseX > width/2 && mouseX < width-40 && mouseY > height/1.25 && mouseY <  height/1.25+height/15 ) fill(#d9d9d9);
+    else fill(#ffffff); 
+    rect(width/2, height/1.25, width/2-40, height/15, 15);
+    fill(#000000);
+    text("COPY COLOR", 2.88*width/4, height/1.215);  
+    
+    if (mouseX > width/2 && mouseX < width-40 && mouseY > height/1.12 && mouseY <  height/1.12+height/15 ) fill(#d9d9d9);
+    else fill(#ffffff); 
+    rect(width/2, height/1.12, width/2-40, height/15, 15);
+    fill(#000000);
+    text("SEARCH COLOR", 2.88*width/4, height/1.1);  
   }
   else
   {
@@ -47,4 +70,27 @@ void colorPickerClick(){
     page = 0;
     camera.stop();
   }
+  
+  if (mouseX > width/2 && mouseX < width-40 && mouseY > height/1.25 && mouseY <  height/1.25+height/15 ) {
+     activity.runOnUiThread(new Runnable(){
+      public void run(){
+        clipboard = (ClipboardManager) activity.getSystemService(Context.CLIPBOARD_SERVICE);
+        clip = android.content.ClipData.newPlainText("Color copied", "#" + hex(getColor, 6));
+        clipboard.setPrimaryClip(clip);
+        Toast.makeText(context, "Color copied",Toast.LENGTH_SHORT).show();
+      }
+    });  
+  }
+  
+  if (mouseX > width/2 && mouseX < width-40 && mouseY > height/1.12 && mouseY <  height/1.12+height/15 ){
+     activity.runOnUiThread(new Runnable(){
+      public void run(){
+        uri = Uri.parse("https://www.google.com/search?q=%23" + hex(getColor, 6) );
+        intentSearch = new Intent(Intent.ACTION_VIEW, uri);
+        activity.startActivity(intentSearch);
+      }
+    }); 
+    camera.stop();
+  }
+  
 }

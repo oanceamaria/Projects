@@ -89,6 +89,7 @@ void keyboard(){
 }
 
 void keyboardClick(){
+  if (mouseY < height-height/2.1) activeKeyboard = false;
   if (mouseX > 25 && mouseX < width/3-25 && mouseY > height-height/2.22 && mouseY <  height-height/2.22+height/14 ) valueKeyboard += "1";
   if (mouseX > width/3+25 && mouseX < 2*width/3-25 && mouseY > height-height/2.22 && mouseY <  height-height/2.22+height/14 ) valueKeyboard += "2";
   if (mouseX > 2*width/3+25 && mouseX < width-25 && mouseY > height-height/2.22 && mouseY <  height-height/2.22+height/14 ) valueKeyboard += "3";

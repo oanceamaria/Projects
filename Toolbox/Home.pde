@@ -8,7 +8,7 @@ void home(){
   imageMode(CORNER);
   rect(0, 0, width, height/10 );
   fill(#ffffff);
-  text("Toolbox", width/2, 30);
+  text("Toolbox", width/2, height/40);
   
   textSize(height/35);
   strokeWeight(5);

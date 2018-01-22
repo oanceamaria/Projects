@@ -11,8 +11,8 @@ void location(){
   imageMode(CORNER);
   rect(0, 0, width, height/10 );
   fill(#ffffff);
-  text("Location", width/2, 40);
-  image(backImg, 20, 20, 110, 80);
+  text("Location", width/2, height/30);
+  image(backImg, width/36, height/60, width/6.5, height/15);
   imageMode(CENTER);
   image(locationImg, width/2, height/3.5);
   

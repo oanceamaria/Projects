@@ -15,10 +15,10 @@ void temperatureConverter(){
   textAlign(CENTER, TOP);
   textSize(height/22.5);
   imageMode(CORNER);
-  rect(0, 0, width, height/9 );
+  rect(0, 0, width, height/10 );
   fill(#ffffff);
-  text("Temperature Converter", width/2+60, 40);
-  image(backImg, 20, 20, 110, 80);
+  text("Temperature Converter", width/2+60, height/30);
+  image(backImg, width/36, height/60, width/6.5, height/15);
   
   strokeWeight(6);
   stroke(#b3b3b3);
@@ -81,7 +81,7 @@ void temperatureConverter(){
   
   strokeWeight(6);
   stroke(#b3b3b3);
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/2.3 && mouseY <  height/2.3+height/15 ) fill(#aaaaaa);
+  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/2.3 && mouseY <  height/2.3+height/15 ) fill(#d9d9d9);
   else fill(#ffffff); 
   rect(10, height/2.3, width/2-40, height/15, 15);
   fill(#000000);
@@ -104,14 +104,15 @@ void temperatureConverterClick(){
 
   if ( mouseX > 10 && mouseX < width/2-30 && mouseY > height/7 && mouseY < height/7+height/12 ) activeKeyboard = true;
   
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4 && mouseY <  height/4+height/20 ) unitTemp1 = "Celsius (°C)";
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+height/20 && mouseY <  height/4+2*height/20 ) unitTemp1 = "Fahrenheit (°F)";
-  if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+2*height/20 && mouseY <  height/4+3*height/20 ) unitTemp1 = "kelvin (K)";
-  
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4 && mouseY <  height/4+height/20 ) unitTemp2 = "Celsius (°C)";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+height/20 && mouseY <  height/4+2*height/20 ) unitTemp2 = "Fahrenheit (°F)";
-  if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+2*height/20 && mouseY <  height/4+3*height/20 ) unitTemp2 = "kelvin (K)";
-  
+  if(!activeKeyboard) {
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4 && mouseY <  height/4+height/20 ) unitTemp1 = "Celsius (°C)";
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+height/20 && mouseY <  height/4+2*height/20 ) unitTemp1 = "Fahrenheit (°F)";
+    if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+2*height/20 && mouseY <  height/4+3*height/20 ) unitTemp1 = "kelvin (K)";
+    
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4 && mouseY <  height/4+height/20 ) unitTemp2 = "Celsius (°C)";
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+height/20 && mouseY <  height/4+2*height/20 ) unitTemp2 = "Fahrenheit (°F)";
+    if (mouseX > width/2+30 && mouseX < width-10 && mouseY > height/4+2*height/20 && mouseY <  height/4+3*height/20 ) unitTemp2 = "kelvin (K)";
+  }
   if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/2.3 && mouseY <  height/2.3+height/15 ) {
     if (negativeValue == "") {
       negativeValue = "-";

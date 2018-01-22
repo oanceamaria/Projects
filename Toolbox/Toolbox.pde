@@ -17,6 +17,10 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+import android.content.ClipboardManager;
+import android.content.ClipData;
+import android.widget.Toast;
+import android.net.Uri; 
 
 
 import ketai.camera.*;
@@ -26,12 +30,14 @@ KetaiCamera camera;
 Activity activity;
 Context context;
 
+
 Accelerometer accelerometer;
 
 int page = 0;
 int posMen = 1;
 int posCloud = 1;
-PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg, line1, line2, bubble, bubbleLevel, BLvertical, BLhorizontal, tastClear;
+PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg, line1, line2;
+PImage bubble, bubbleLevel, BLvertical, BLhorizontal, tastClear, logoUC, iconUC;
 PImage [] mens;
 PImage [] clouds;
 
@@ -74,6 +80,8 @@ void setup(){
   BLvertical = loadImage("vertical.png");
   BLhorizontal = loadImage("orizontal.png");
   tastClear = loadImage("tastClear.png");
+  iconUC = loadImage("iconUC.png");
+  logoUC = loadImage("logoUC.png");
   
   mens = new PImage[30];
   for (int i=1;i<=21;i++){
@@ -134,7 +142,10 @@ void mousePressed(){
 void keyReleased() {
     if (key == CODED && keyCode == android.view.KeyEvent.KEYCODE_BACK) {
       if (page >= 1) page = 0;
-      if (page == -1) page = 7;
+      if (page == -1) {
+        page = 7;
+        activeKeyboard = false;
+      }
     }
 }
 
@@ -143,5 +154,9 @@ void onCameraPreviewEvent()
   camera.read();
 }
 
+public void onPause() {
+  super.onPause();
+  if (camera != null && camera.isStarted()) camera.stop();
+}
 
   

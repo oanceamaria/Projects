@@ -9,8 +9,8 @@ void inclination(){
   imageMode(CORNER);
   rect(0, 0, width, height/10 );
   fill(#ffffff);
-  text("Inclination", width/2, 40); 
-  image(backImg, 20, 20, 110, 80);
+  text("Inclination", width/2, height/30); 
+  image(backImg, width/36, height/60, width/6.5, height/15);
   
   inclination = atan( ay / (sqrt(pow(ax,2) + pow(az,2))));
   inclination *= 180.00;
