@@ -106,6 +106,7 @@ void draw(){
   if ( page == 5 ) inclination();
   if ( page == 6 ) bubbleLevel();
   if ( page == 7 ) unitConverter();
+  if ( page == 8 ) calculatePAV();
   if ( page == -1 && pageUC == 1 ) angleConverter();
   if ( page == -1 && pageUC == 2 ) areaConverter();
   if ( page == -1 && pageUC == 3 ) lengthConverter();
@@ -127,7 +128,8 @@ void mousePressed(){
   if ( page == 4 ) distanceClick();
   if ( page == 5 ) inclinationClick();
   if ( page == 6 ) bubbleLevelClick();
-  if ( page == 7 ) unitConverterClick();
+  if ( page == 7 ) unitConverterClick();  
+  if ( page == 8 ) calculatePAVClick();
   if (activeKeyboard) keyboardClick();
   if ( page == -1 && pageUC == 1 ) angleConverterClick();
   if ( page == -1 && pageUC == 2 ) areaConverterClick();
