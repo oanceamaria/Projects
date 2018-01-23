@@ -31,7 +31,11 @@ void calculatePAVClick(){
     page = 0;
   }
   
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10 && mouseY < height/5 ) pagePAV = 1;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10 && mouseY < height/5 ) {
+    pagePAV = 1;
+    page = -2;
+    pageP = 0;
+  }
   if ( mouseX > 0 && mouseX < width && mouseY > height/5 && mouseY < 3*height/10 ) pagePAV = 2;
   if ( mouseX > 0 && mouseX < width && mouseY > 3*height/10 && mouseY < 2*height/5 ) pagePAV = 3;
 

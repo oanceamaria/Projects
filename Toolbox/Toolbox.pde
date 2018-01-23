@@ -115,6 +115,7 @@ void draw(){
   if ( page == -1 && pageUC == 6 ) timeConverter();
   if ( page == -1 && pageUC == 7 ) volumeConverter();
   if ( page == -1 && pageUC == 8 ) weightConverter();
+  if ( page == -2 && pagePAV == 1 ) calculatePerimeter();
   
   if(activeKeyboard) keyboard();
   
@@ -139,6 +140,7 @@ void mousePressed(){
   if ( page == -1 && pageUC == 6 ) timeConverterClick();
   if ( page == -1 && pageUC == 7 ) volumeConverterClick();
   if ( page == -1 && pageUC == 8 ) weightConverterClick();
+  if ( page == -2 && pagePAV == 1 ) calculatePerimeterClick();
 }
 
 void keyReleased() {
