@@ -4,6 +4,10 @@ String cTr = "";
 String perimeterTr = "";
 String areaTr = "";
 
+boolean okaTr = false;
+boolean okbTr = false;
+boolean okcTr = false;
+
 void perimeterTriangle(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -19,6 +23,11 @@ void perimeterTriangle(){
   imageMode(CENTER);
   image(triangleImg, width/2, height/4.8, width/1.5, height/5);
   
+  if (okaTr) aTr = valueKeyboard;
+  if (okbTr) bTr = valueKeyboard;
+  if (okcTr) cTr = valueKeyboard;
+  if (aTr != "" && bTr != "" && cTr != "" ) calculatesPATr();
+  
   textSize(height/30);
   textAlign(LEFT, TOP);
   fill(#000000);
@@ -27,13 +36,22 @@ void perimeterTriangle(){
   noFill();
   text("Enter the value:", 20, height/3.2);
   text("a = ", 20, height/2.72);
-  rect(width/8, height/2.8, width/2-40, height/20, 15);
+  if ( mouseX > width/8 && mouseX < width/8+width/2 && mouseY > height/2.8 && mouseY < height/2.8+height/20 ) fill(#d9d9d9);
+  else noFill();
+  rect(width/8, height/2.8, width/2, height/20, 15);
+  fill(#000000);
   text (aTr, width/7, height/2.72);
   text("b = ", 20, height/2.35);
-  rect(width/8, height/2.4, width/2-40, height/20, 15);
+  if ( mouseX > width/8 && mouseX < width/8+width/2 && mouseY > height/2.4 && mouseY < height/2.4+height/20 ) fill(#d9d9d9);
+  else noFill();
+  rect(width/8, height/2.4, width/2, height/20, 15);
+  fill(#000000);
   text (bTr, width/7, height/2.35);
   text("c = ", 20, height/2.05);
-  rect(width/8, height/2.1, width/2-40, height/20, 15);
+  if ( mouseX > width/8 && mouseX < width/8+width/2 && mouseY > height/2.1 && mouseY < height/2.1+height/20 ) fill(#d9d9d9);
+  else noFill();
+  rect(width/8, height/2.1, width/2, height/20, 15);
+  fill(#000000);
   text (cTr, width/7, height/2.05);
   
   textSize(height/25);
@@ -41,6 +59,7 @@ void perimeterTriangle(){
   text (perimeterTr, width/6.5, height/1.75);
   text("A = ", 20, height/1.6);
   text (areaTr, width/6.5, height/1.6);
+  
 }
 
 void perimeterTriangleClick(){
@@ -48,7 +67,34 @@ void perimeterTriangleClick(){
     page = -2;
     pagePAV = 1;
     pagePA = 0;
+    aTr = bTr = cTr = valueKeyboard = perimeterTr = areaTr = "";
   }
 
- 
+  if ( mouseX > width/8 && mouseX < width/8+width/2 && mouseY > height/2.8 && mouseY < height/2.8+height/20 ) {
+    activeKeyboard = true;
+    okaTr = true;
+    okbTr = false;
+    okcTr = false;
+    valueKeyboard = aTr;
+  }
+  if ( mouseX > width/8 && mouseX < width/8+width/2 && mouseY > height/2.4 && mouseY < height/2.4+height/20 ) {
+    activeKeyboard = true;
+    okbTr = true;
+    okaTr = false;
+    okcTr = false;
+    valueKeyboard = bTr;
+  }
+  if ( mouseX > width/8 && mouseX < width/8+width/2 && mouseY > height/2.1 && mouseY < height/2.1+height/20 ) {
+    activeKeyboard = true;
+    okcTr = true;
+    okaTr = false;
+    okbTr = false;
+    valueKeyboard = cTr;
+  }
+}
+
+void calculatesPATr(){
+  perimeterTr = str( float(aTr) + float(bTr) + float(cTr) ); 
+  float p = ( float(aTr) + float(bTr) + float(cTr) ) / 2;
+  areaTr = str( sqrt( p * ( p - float(aTr) ) * ( p - float(bTr) ) * ( p - float(cTr) ) ) );
 }
