@@ -8,7 +8,7 @@ boolean okaTr = false;
 boolean okbTr = false;
 boolean okcTr = false;
 
-void perimeterTriangle(){
+void trianglePA(){
   strokeWeight(3);
   stroke(#0000ff);
   fill(#0000ff);
@@ -62,7 +62,7 @@ void perimeterTriangle(){
   
 }
 
-void perimeterTriangleClick(){
+void trianglePAClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
     pagePAV = 1;

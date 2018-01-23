@@ -37,7 +37,7 @@ int page = 0;
 int posMen = 1;
 int posCloud = 1;
 PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg, line1, line2;
-PImage bubble, bubbleLevel, BLvertical, BLhorizontal, tastClear, logoUC, iconUC, triangleImg;
+PImage bubble, bubbleLevel, BLvertical, BLhorizontal, tastClear, logoUC, iconUC, triangleImg, circleImg;
 PImage [] mens;
 PImage [] clouds;
 
@@ -83,6 +83,7 @@ void setup(){
   iconUC = loadImage("iconUC.png");
   logoUC = loadImage("logoUC.png");
   triangleImg = loadImage("triunghi.png");
+  circleImg = loadImage("circle.png");
   
   mens = new PImage[30];
   for (int i=1;i<=21;i++){
@@ -117,7 +118,8 @@ void draw(){
   if ( page == -1 && pageUC == 7 ) volumeConverter();
   if ( page == -1 && pageUC == 8 ) weightConverter();
   if ( page == -2 && pagePAV == 1 && pagePA == 0) calculatePerimeterArea();
-  if ( page == -2 && pagePAV == 1 && pagePA == 3) perimeterTriangle();
+  if ( page == -2 && pagePAV == 1 && pagePA == 1) circlePA();
+  if ( page == -2 && pagePAV == 1 && pagePA == 3) trianglePA();
   
   if(activeKeyboard) keyboard();
   
@@ -143,7 +145,8 @@ void mousePressed(){
   if ( page == -1 && pageUC == 7 ) volumeConverterClick();
   if ( page == -1 && pageUC == 8 ) weightConverterClick();
   if ( page == -2 && pagePAV == 1 && pagePA == 0 && okPerimeter) calculatePerimeterAreaClick();
-  if ( page == -2 && pagePAV == 1 && pagePA == 3) perimeterTriangleClick();
+  if ( page == -2 && pagePAV == 1 && pagePA == 1) circlePAClick();
+  if ( page == -2 && pagePAV == 1 && pagePA == 3) trianglePAClick();
 
 }
 
