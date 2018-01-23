@@ -37,7 +37,7 @@ int page = 0;
 int posMen = 1;
 int posCloud = 1;
 PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg, line1, line2;
-PImage bubble, bubbleLevel, BLvertical, BLhorizontal, tastClear, logoUC, iconUC;
+PImage bubble, bubbleLevel, BLvertical, BLhorizontal, tastClear, logoUC, iconUC, triangleImg;
 PImage [] mens;
 PImage [] clouds;
 
@@ -82,6 +82,7 @@ void setup(){
   tastClear = loadImage("tastClear.png");
   iconUC = loadImage("iconUC.png");
   logoUC = loadImage("logoUC.png");
+  triangleImg = loadImage("triunghi.png");
   
   mens = new PImage[30];
   for (int i=1;i<=21;i++){
@@ -115,7 +116,8 @@ void draw(){
   if ( page == -1 && pageUC == 6 ) timeConverter();
   if ( page == -1 && pageUC == 7 ) volumeConverter();
   if ( page == -1 && pageUC == 8 ) weightConverter();
-  if ( page == -2 && pagePAV == 1 ) calculatePerimeter();
+  if ( page == -2 && pagePAV == 1 && pagePA == 0) calculatePerimeterArea();
+  if ( page == -2 && pagePAV == 1 && pagePA == 3) perimeterTriangle();
   
   if(activeKeyboard) keyboard();
   
@@ -140,7 +142,9 @@ void mousePressed(){
   if ( page == -1 && pageUC == 6 ) timeConverterClick();
   if ( page == -1 && pageUC == 7 ) volumeConverterClick();
   if ( page == -1 && pageUC == 8 ) weightConverterClick();
-  if ( page == -2 && pagePAV == 1 ) calculatePerimeterClick();
+  if ( page == -2 && pagePAV == 1 && pagePA == 0 && okPerimeter) calculatePerimeterAreaClick();
+  if ( page == -2 && pagePAV == 1 && pagePA == 3) perimeterTriangleClick();
+
 }
 
 void keyReleased() {
@@ -148,6 +152,17 @@ void keyReleased() {
       if (page >= 1) page = 0;
       if (page == -1) {
         page = 7;
+        activeKeyboard = false;
+      }
+      if (page == -2 && pagePA == 0) {
+        page = 8;
+        pagePAV = 0;
+        activeKeyboard = false;
+      }
+      if (page == -2 && pagePAV == 1 && pagePA >= 1) {
+        page = -2;
+        pagePAV = 1;
+        pagePA = 0;
         activeKeyboard = false;
       }
     }

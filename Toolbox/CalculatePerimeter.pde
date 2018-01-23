@@ -1,15 +1,15 @@
-int pageP = 0;
+int pagePA = 0;
 
-void calculatePerimeter(){
+void calculatePerimeterArea(){
   strokeWeight(3);
   stroke(#0000ff);
   fill(#0000ff);
   textAlign(CENTER, TOP);
-  textSize(height/25);
+  textSize(height/22);
   imageMode(CORNER);
   rect(0, 0, width, height/10 );
   fill(#ffffff);
-  text("Calculate Perimeter", width/2+30, height/30);
+  text("Perimeter / Area", width/2+40, height/30);
   image(backImg, width/36, height/60, width/6.5, height/15);
   imageMode(CENTER);
   
@@ -40,20 +40,20 @@ void calculatePerimeter(){
   text("Hexagon", width/2, height/8+9*height/12);
 }
 
-void calculatePerimeterClick(){
+void calculatePerimeterAreaClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 8;
   }
 
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10 && mouseY < height/10+height/12 ) pageP = 1;
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10+height/12 && mouseY < height/10+2*height/12 ) pageP = 2;
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10+2*height/12 && mouseY < height/10+3*height/12 ) pageP = 3;
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10+3*height/12 && mouseY < height/10+4*height/12 ) pageP = 4;
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10+4*height/12 && mouseY < height/10+5*height/12 ) pageP = 5;
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10+5*height/12 && mouseY < height/10+6*height/12 ) pageP = 6;
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10+6*height/12 && mouseY < height/10+7*height/12 ) pageP = 7;
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10+7*height/12 && mouseY < height/10+8*height/12 ) pageP = 8;
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10+8*height/12 && mouseY < height/10+9*height/12 ) pageP = 9;
-  if ( mouseX > 0 && mouseX < width && mouseY > height/10+9*height/12 && mouseY < height/10+10*height/12 ) pageP = 10;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10 && mouseY < height/10+height/12 ) pagePA = 1;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10+height/12 && mouseY < height/10+2*height/12 ) pagePA = 2;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10+2*height/12 && mouseY < height/10+3*height/12 ) pagePA = 3;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10+3*height/12 && mouseY < height/10+4*height/12 ) pagePA = 4;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10+4*height/12 && mouseY < height/10+5*height/12 ) pagePA = 5;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10+5*height/12 && mouseY < height/10+6*height/12 ) pagePA = 6;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10+6*height/12 && mouseY < height/10+7*height/12 ) pagePA = 7;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10+7*height/12 && mouseY < height/10+8*height/12 ) pagePA = 8;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10+8*height/12 && mouseY < height/10+9*height/12 ) pagePA = 9;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/10+9*height/12 && mouseY < height/10+10*height/12 ) pagePA = 10;
  
 }
