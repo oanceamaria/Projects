@@ -37,7 +37,7 @@ void location(){
 }
 
 void locationClick(){
-  if ( mouseX > 20 && mouseX < 130 && mouseY > 20 && mouseY < 100 ) {
+  if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 0;
   }
 }

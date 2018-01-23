@@ -147,7 +147,7 @@ void lengthConverter(){
 }
 
 void lengthConverterClick(){
-  if ( mouseX > 20 && mouseX < 130 && mouseY > 20 && mouseY < 100 ) {
+  if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 7;
     activeKeyboard = false;
     unitL1 = unitL2 = length1S = length2S = valueKeyboard = "";
