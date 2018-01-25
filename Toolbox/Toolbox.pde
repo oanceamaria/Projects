@@ -135,6 +135,7 @@ void draw(){
   if ( page == -2 && pagePAV == 1 && pagePA == 6) diamondPA();
   if ( page == -2 && pagePAV == 1 && pagePA == 7) parallelogramPA();
   if ( page == -2 && pagePAV == 1 && pagePA == 8) trapezePA();
+  if ( page == -2 && pagePAV == 1 && pagePA == 9) pentagonPA();
   
   if(activeKeyboard) keyboard();
   
@@ -168,6 +169,7 @@ void mousePressed(){
   if ( page == -2 && pagePAV == 1 && pagePA == 6) diamondPAClick();
   if ( page == -2 && pagePAV == 1 && pagePA == 7) parallelogramPAClick();  
   if ( page == -2 && pagePAV == 1 && pagePA == 8) trapezePAClick();
+  if ( page == -2 && pagePAV == 1 && pagePA == 9) pentagonPAClick();
 
 }
 
