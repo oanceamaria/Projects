@@ -58,7 +58,7 @@ void ellipsePAClick(){
     page = -2;
     pagePAV = 1;
     pagePA = 0;
-    r1E = r2E = cTr = valueKeyboard = perimeterE = areaE = "";
+    r1E = r2E = valueKeyboard = perimeterE = areaE = "";
   }
 
   if ( mouseX > width/7 && mouseX < width/7+width/2 && mouseY > height/2.8 && mouseY < height/2.8+height/20 ) {
