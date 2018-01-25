@@ -36,7 +36,7 @@ void circlePA(){
   text (rC, width/7, height/2.72);
 
   textSize(height/25);
-  text("P = ", 20, height/2.2);
+  text("C = ", 20, height/2.2);
   text (perimeterC, width/6.5, height/2.2);
   text("A = ", 20, height/2);
   text (areaC, width/6.5, height/2);
