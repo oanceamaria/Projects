@@ -131,6 +131,7 @@ void draw(){
   if ( page == -2 && pagePAV == 1 && pagePA == 2) ellipsePA();
   if ( page == -2 && pagePAV == 1 && pagePA == 3) trianglePA();
   if ( page == -2 && pagePAV == 1 && pagePA == 4) squarePA();
+  if ( page == -2 && pagePAV == 1 && pagePA == 5) rectanglePA();
   
   if(activeKeyboard) keyboard();
   
@@ -159,7 +160,8 @@ void mousePressed(){
   if ( page == -2 && pagePAV == 1 && pagePA == 1) circlePAClick();
   if ( page == -2 && pagePAV == 1 && pagePA == 2) ellipsePAClick();
   if ( page == -2 && pagePAV == 1 && pagePA == 3) trianglePAClick();
-  if ( page == -2 && pagePAV == 1 && pagePA == 4) squarePAClick();
+  if ( page == -2 && pagePAV == 1 && pagePA == 4) squarePAClick(); 
+  if ( page == -2 && pagePAV == 1 && pagePA == 5) rectanglePAClick();
 
 }
 
