@@ -38,7 +38,7 @@ int posMen = 1;
 int posCloud = 1;
 PImage colorPickerImg, converterImg, distanceImg, inclinationImg, locationImg, bubbleLevelImg, soundIntensityImg, pavImg, backImg, gridImg, soundMeterImg, needleImg, line1, line2;
 PImage bubble, bubbleLevel, BLvertical, BLhorizontal, tastClear, logoUC, iconUC, triangleImg, circleImg, ellipseImg, squareImg, rectangleImg, diamondImg, parallelogramImg, trapezeImg;
-PImage pentagonImg, hexagonImg;
+PImage pentagonImg, hexagonImg, sphereImg, coneImg, cylinderImg, pyramidImg, prismImg, cubeImg, RPImg;
 PImage [] mens;
 PImage [] clouds;
 
@@ -92,7 +92,14 @@ void setup(){
   parallelogramImg = loadImage("paralelogram.png");
   trapezeImg = loadImage("trapez.png");
   pentagonImg = loadImage("pentagon.png");
-  hexagonImg = loadImage("hexagon.png");
+  hexagonImg = loadImage("hexagon.png"); 
+  sphereImg = loadImage("sfera.png");
+  coneImg = loadImage("conN.png");
+  cylinderImg = loadImage("cilindru.png");
+  pyramidImg = loadImage("piramida.png");
+  prismImg = loadImage("prisma.png");
+  cubeImg = loadImage("cub.png");
+  RPImg = loadImage("paralelipiped.png");
   
   mens = new PImage[30];
   for (int i=1;i<=21;i++){
@@ -137,7 +144,8 @@ void draw(){
   if ( page == -2 && pagePAV == 1 && pagePA == 8) trapezePA();
   if ( page == -2 && pagePAV == 1 && pagePA == 9) pentagonPA();
   if ( page == -2 && pagePAV == 1 && pagePA == 10) hexagonPA();
-  if ( page == -2 && pagePAV == 2 && pageAV == 0) calculateAreaVolume();
+  if ( page == -2 && pagePAV == 2 && pageAV == 0) calculateAreaVolume(); 
+  if ( page == -2 && pagePAV == 2 && pageAV == 1) sphereAV();
   
   if(activeKeyboard) keyboard();
   
@@ -174,6 +182,7 @@ void mousePressed(){
   if ( page == -2 && pagePAV == 1 && pagePA == 9) pentagonPAClick();
   if ( page == -2 && pagePAV == 1 && pagePA == 10) hexagonPAClick(); 
   if ( page == -2 && pagePAV == 2 && pageAV == 0 && okVolume) calculateAreaVolumeClick();
+  if ( page == -2 && pagePAV == 2 && pageAV == 1) sphereAVClick(); 
 
 }
 
@@ -198,7 +207,7 @@ void keyReleased() {
       if (page == -2 && pagePAV == 2 && pageAV >= 1) {
         page = -2;
         pagePAV = 2;
-        pagePA = 0;
+        pageAV = 0;
         activeKeyboard = false;
       }
     }

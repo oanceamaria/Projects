@@ -46,6 +46,5 @@ void calculateAreaVolumeClick(){
   if ( mouseX > 0 && mouseX < width && mouseY > height/10+4*height/12 && mouseY < height/10+5*height/12 ) pageAV = 5;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10+5*height/12 && mouseY < height/10+6*height/12 ) pageAV = 6;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10+6*height/12 && mouseY < height/10+7*height/12 ) pageAV = 7;
-  println(pageAV);
  
 }
