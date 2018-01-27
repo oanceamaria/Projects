@@ -146,6 +146,7 @@ void draw(){
   if ( page == -2 && pagePAV == 1 && pagePA == 10) hexagonPA();
   if ( page == -2 && pagePAV == 2 && pageAV == 0) calculateAreaVolume(); 
   if ( page == -2 && pagePAV == 2 && pageAV == 1) sphereAV();
+  if ( page == -2 && pagePAV == 2 && pageAV == 2) coneAV();
   
   if(activeKeyboard) keyboard();
   
@@ -183,6 +184,7 @@ void mousePressed(){
   if ( page == -2 && pagePAV == 1 && pagePA == 10) hexagonPAClick(); 
   if ( page == -2 && pagePAV == 2 && pageAV == 0 && okVolume) calculateAreaVolumeClick();
   if ( page == -2 && pagePAV == 2 && pageAV == 1) sphereAVClick(); 
+  if ( page == -2 && pagePAV == 2 && pageAV == 2) coneAVClick(); 
 
 }
 
