@@ -1,5 +1,6 @@
 int pagePAV = 0;
 boolean okPerimeter = true;
+boolean okVolume = true;
 
 void calculatePAV(){
   strokeWeight(3);
@@ -22,7 +23,7 @@ void calculatePAV(){
   rect(-2, height/10, width+4, height/10 );
   text("Calculate Perimeter/Area", width/2, height/7.5);
   rect(-2, height/5, width+4, height/10 );
-  text("Calculate Volume", width/2, height/7.5 + height/10);
+  text("Calculate Area / Volume", width/2, height/7.5 + height/10);
 }
 
 void calculatePAVClick(){
@@ -38,11 +39,22 @@ void calculatePAVClick(){
     thread("threadPerimeterArea");
 
   }
-  if ( mouseX > 0 && mouseX < width && mouseY > height/5 && mouseY < 3*height/10 ) pagePAV = 2;
+  if ( mouseX > 0 && mouseX < width && mouseY > height/5 && mouseY < 3*height/10 ) {
+    pagePAV = 2;
+    page = -2;
+    pageAV = 0;
+    okVolume = false;
+    thread("threadAreaVolume");
+  }
   
 }
 
 void threadPerimeterArea(){
   delay(500);
   okPerimeter = true;
+}
+
+void threadAreaVolume(){
+  delay(500);
+  okVolume = true;
 }

@@ -137,6 +137,7 @@ void draw(){
   if ( page == -2 && pagePAV == 1 && pagePA == 8) trapezePA();
   if ( page == -2 && pagePAV == 1 && pagePA == 9) pentagonPA();
   if ( page == -2 && pagePAV == 1 && pagePA == 10) hexagonPA();
+  if ( page == -2 && pagePAV == 2 && pageAV == 0) calculateAreaVolume();
   
   if(activeKeyboard) keyboard();
   
@@ -171,7 +172,8 @@ void mousePressed(){
   if ( page == -2 && pagePAV == 1 && pagePA == 7) parallelogramPAClick();  
   if ( page == -2 && pagePAV == 1 && pagePA == 8) trapezePAClick();
   if ( page == -2 && pagePAV == 1 && pagePA == 9) pentagonPAClick();
-  if ( page == -2 && pagePAV == 1 && pagePA == 10) hexagonPAClick();
+  if ( page == -2 && pagePAV == 1 && pagePA == 10) hexagonPAClick(); 
+  if ( page == -2 && pagePAV == 2 && pageAV == 0 && okVolume) calculateAreaVolumeClick();
 
 }
 
@@ -182,7 +184,7 @@ void keyReleased() {
         page = 7;
         activeKeyboard = false;
       }
-      if (page == -2 && pagePA == 0) {
+      if (page == -2 && pagePA == 0 && pageAV == 0) {
         page = 8;
         pagePAV = 0;
         activeKeyboard = false;
@@ -190,6 +192,12 @@ void keyReleased() {
       if (page == -2 && pagePAV == 1 && pagePA >= 1) {
         page = -2;
         pagePAV = 1;
+        pagePA = 0;
+        activeKeyboard = false;
+      }
+      if (page == -2 && pagePAV == 2 && pageAV >= 1) {
+        page = -2;
+        pagePAV = 2;
         pagePA = 0;
         activeKeyboard = false;
       }
