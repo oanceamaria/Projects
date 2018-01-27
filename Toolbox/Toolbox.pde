@@ -147,6 +147,7 @@ void draw(){
   if ( page == -2 && pagePAV == 2 && pageAV == 0) calculateAreaVolume(); 
   if ( page == -2 && pagePAV == 2 && pageAV == 1) sphereAV();
   if ( page == -2 && pagePAV == 2 && pageAV == 2) coneAV();
+  if ( page == -2 && pagePAV == 2 && pageAV == 3) cylinderAV();
   
   if(activeKeyboard) keyboard();
   
@@ -185,6 +186,7 @@ void mousePressed(){
   if ( page == -2 && pagePAV == 2 && pageAV == 0 && okVolume) calculateAreaVolumeClick();
   if ( page == -2 && pagePAV == 2 && pageAV == 1) sphereAVClick(); 
   if ( page == -2 && pagePAV == 2 && pageAV == 2) coneAVClick(); 
+  if ( page == -2 && pagePAV == 2 && pageAV == 3) cylinderAVClick(); 
 
 }
 
