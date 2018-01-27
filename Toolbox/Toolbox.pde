@@ -148,6 +148,7 @@ void draw(){
   if ( page == -2 && pagePAV == 2 && pageAV == 1) sphereAV();
   if ( page == -2 && pagePAV == 2 && pageAV == 2) coneAV();
   if ( page == -2 && pagePAV == 2 && pageAV == 3) cylinderAV();
+  if ( page == -2 && pagePAV == 2 && pageAV == 4) pyramidAV();
   
   if(activeKeyboard) keyboard();
   
@@ -187,6 +188,7 @@ void mousePressed(){
   if ( page == -2 && pagePAV == 2 && pageAV == 1) sphereAVClick(); 
   if ( page == -2 && pagePAV == 2 && pageAV == 2) coneAVClick(); 
   if ( page == -2 && pagePAV == 2 && pageAV == 3) cylinderAVClick(); 
+  if ( page == -2 && pagePAV == 2 && pageAV == 4) pyramidAVClick(); 
 
 }
 
