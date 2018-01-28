@@ -1,3 +1,11 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
+//Creating a class in which the accelerometer sent values will be read
+
 SensorManager managerA;
 Sensor sensorA;
 
