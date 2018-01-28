@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String temperature1S = "";
 String temperature2S = "";
 
@@ -8,6 +14,7 @@ String negativeValue = "";
 String msgNeg = "";
 String btnMSG = "NEGATIVE";
 
+//the function, where the temperature converter interface is created
 void temperatureConverter(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -94,6 +101,7 @@ void temperatureConverter(){
   text(msgNeg, width/2-10, height/2.2);  
 }
 
+//the function, where defines actions on the temperature converter page
 void temperatureConverterClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 7;
@@ -127,6 +135,7 @@ void temperatureConverterClick(){
   
 }
 
+//the function in which an angle is converted from unit1 to unit2
 void convertsTemperature(){
   if ( unitTemp1 == "Celsius (°C)" && unitTemp2 == "Celsius (°C)" ) temperature2S = temperature1S;
   if ( unitTemp1 == "Celsius (°C)" && unitTemp2 == "Fahrenheit (°F)" ) temperature2S = str( float(temperature1S) * 1.8 + 32 );

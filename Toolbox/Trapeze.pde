@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String aT = "";
 String bT= "";
 String cT = "";
@@ -14,6 +20,7 @@ boolean okhT = false;
 
 float transT = 0;
 
+//the function where the interface for the trapeze perimeter and area calculation page is created 
 void trapezePA(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -95,6 +102,7 @@ void trapezePA(){
   popMatrix();
 }
 
+//the function, where defines actions for the trapeze perimeter and area calculation page
 void trapezePAClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -153,6 +161,7 @@ void trapezePAClick(){
   }
 }
 
+//the function where calculate perimeter and area of the trapeze
 void calculatesPAT(){
   perimeterT = str( float(aT) + float(bT) + float(cT) + float(dT)); 
   areaT = str( ( ( float(aT) + float(cT) ) * float(hT) ) / 2 );

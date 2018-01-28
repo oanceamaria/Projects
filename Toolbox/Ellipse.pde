@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/ 
+
 String r1E = "";
 String r2E= "";
 String perimeterE = "";
@@ -6,6 +12,7 @@ String areaE = "";
 boolean okr1E = false;
 boolean okr2E = false;
 
+//the function where the interface for the ellipse perimeter and area calculation page is created
 void ellipsePA(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -53,6 +60,7 @@ void ellipsePA(){
   
 }
 
+//the function, where defines actions for the ellipse perimeter and area calculation page
 void ellipsePAClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -75,6 +83,7 @@ void ellipsePAClick(){
   }
 }
 
+//the function where calculate perimeter and area of the ellipse
 void calculatesPAE(){
   perimeterE = str( 2 * PI * sqrt( ( pow( float(r1E), 2) + pow( float(r2E), 2 ) ) / 2 ) ); 
   areaE = str( PI * float(r1E) * float(r2E) );

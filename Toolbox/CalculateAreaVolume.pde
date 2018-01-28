@@ -1,5 +1,12 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 int pageAV = 0;
 
+//the function where the interface for the area and volume calculation page is created
 void calculateAreaVolume(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -34,11 +41,13 @@ void calculateAreaVolume(){
   text("Rectangular Parallelepiped", width/2, height/8+6*height/12);
 }
 
+//the function, where defines actions for the area and volume calculation page
 void calculateAreaVolumeClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 8;
   }
 
+  //when selecting a geometric figure the variable corresponding to that page receives the corresponding value
   if ( mouseX > 0 && mouseX < width && mouseY > height/10 && mouseY < height/10+height/12 ) pageAV = 1;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10+height/12 && mouseY < height/10+2*height/12 ) pageAV = 2;
   if ( mouseX > 0 && mouseX < width && mouseY > height/10+2*height/12 && mouseY < height/10+3*height/12 ) pageAV = 3;

@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String aTr = "";
 String bTr= "";
 String cTr = "";
@@ -8,6 +14,7 @@ boolean okaTr = false;
 boolean okbTr = false;
 boolean okcTr = false;
 
+//the function where the interface for the triangle perimeter and area calculation page is created 
 void trianglePA(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -62,6 +69,7 @@ void trianglePA(){
   
 }
 
+//the function, where defines actions for the triangle perimeter and area calculation page
 void trianglePAClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -93,6 +101,7 @@ void trianglePAClick(){
   }
 }
 
+//the function where calculate perimeter and area of the triangle
 void calculatesPATr(){
   perimeterTr = str( float(aTr) + float(bTr) + float(cTr) ); 
   float p = ( float(aTr) + float(bTr) + float(cTr) ) / 2;

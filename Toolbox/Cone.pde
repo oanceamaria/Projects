@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String rCone = "";
 String hCone= "";
 String areaCone = "";
@@ -6,6 +12,7 @@ String volumeCone = "";
 boolean okrCone = false;
 boolean okhCone = false;
 
+//the function where the interface for the cone area and volume calculation page is created
 void coneAV(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -53,6 +60,7 @@ void coneAV(){
   
 }
 
+//the function, where defines actions for the circle area and volume calculation page
 void coneAVClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -75,6 +83,7 @@ void coneAVClick(){
   }
 }
 
+//the function where calculate area and volume of the cone
 void calculatesAVCone(){
   areaCone = str( PI * float(rCone) * ( float(rCone) + sqrt( pow( float(rCone), 2 ) + pow( float(hCone), 2 ) ) ) ); 
   volumeCone = str( ( (float) 1 / 3 ) * PI * pow( float(rCone), 2 ) * float(hCone) );

@@ -1,9 +1,16 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String angle1s = "";
 String angle2s = "";
 
 String unitA1 = "";
 String unitA2 = "";
 
+//the function, where the angle converter interface is created
 void angleConverter(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -36,8 +43,10 @@ void angleConverter(){
   text(unitA2, width/2+40, height/5);
   
  if (valueKeyboard.length() <= 15 ) angle1s = valueKeyboard; 
+ //the conversion function is called while entering the value if the units of measurement have been selected
  if (unitA1 != "" && unitA2 != "" && angle1s != "" ) convertsAngle();
   
+  //creating two lists of units of measure, the first for the units to be converted and a second for the units in which the value will be converted
   textSize(height/35);
   noFill();
   rect(10, height/4, width/2-40, 2*height/20);
@@ -66,15 +75,19 @@ void angleConverter(){
   text("radians", width/2+40, height/3.8+height/20); 
 }
 
+//the function, where defines actions on the angle converter page
 void angleConverterClick(){
+  //if touch the back button created in the application returns to the previous page
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 7;
     activeKeyboard = false;
     unitA1 = unitA2 = angle1s = angle2s = valueKeyboard = "";
   }
   
+  //when the input for entering value is pressed, the keyboard is displayed
   if ( mouseX > 10 && mouseX < width/2-30 && mouseY > height/7.5 && mouseY < height/7.5+height/20 ) activeKeyboard = true;
   
+  //when selecting a unit of measurement it is stored in the corresponding variable
   if(!activeKeyboard) {
     if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4 && mouseY <  height/4+height/20 ) unitA1 = "degrees";
     if (mouseX > 10 && mouseX < width/2-30 && mouseY > height/4+height/20 && mouseY <  height/4+2*height/20 ) unitA1 = "radians";
@@ -84,7 +97,9 @@ void angleConverterClick(){
   }
 }
 
+//the function in which an angle is converted from unit1 to unit2
 void convertsAngle(){
+  //check all possible cases, and depending on the situation, perform the appropriate conversion
   if ( unitA1 == "degrees" && unitA2 == "degrees" ) angle2s = angle1s;
   if ( unitA1 == "degrees" && unitA2 == "radians" ) angle2s = str (radians( float(angle1s) ) );
   if ( unitA1 == "radians" && unitA2 == "degrees" ) angle2s = str (degrees( float(angle1s) ) );

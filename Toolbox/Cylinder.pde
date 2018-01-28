@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String rCylinder = "";
 String hCylinder= "";
 String areaCylinder = "";
@@ -6,6 +12,7 @@ String volumeCylinder = "";
 boolean okrCylinder = false;
 boolean okhCylinder = false;
 
+//the function where the interface for the cube area and volume calculation page is cylinder
 void cylinderAV(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -53,6 +60,7 @@ void cylinderAV(){
   
 }
 
+//the function, where defines actions for the cylinder area and volume calculation page
 void cylinderAVClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -75,6 +83,7 @@ void cylinderAVClick(){
   }
 }
 
+//the function where calculate area and volume of the cube
 void calculatesAVCylinder(){
   areaCylinder = str( 2 * PI * float(rCylinder) * ( float(rCylinder) + float(hCylinder) ) ); 
   volumeCylinder = str( PI * pow( float(rCylinder), 2 ) * float(hCylinder) );

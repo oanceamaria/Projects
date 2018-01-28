@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/ 
+
 String nPrism = "";
 String aPrism= "";
 String hPrism = "";
@@ -8,6 +14,7 @@ boolean oknPrism = false;
 boolean okaPrism = false;
 boolean okhPrism = false;
 
+//the function where the interface for the prism area and volume calculation page is created
 void prismAV(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -62,6 +69,7 @@ void prismAV(){
   
 }
 
+//the function, where defines actions for the prism area and volume calculation page
 void prismAVClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -93,6 +101,7 @@ void prismAVClick(){
   }
 }
 
+//the function where calculate area and volume of the prism
 void calculatesAVPrism(){
   areaPrism = str( 2 * ( ( (float) 1 / 4 ) * float(nPrism) * pow( float(aPrism), 2) * ( cos( PI / float(nPrism) ) / sin( PI / float(nPrism) ) ) ) + ( float(nPrism) *  float(aPrism) * float(hPrism)  ) ); 
   volumePrism = str(  ( ( (float) 1 / 4 ) * float(nPrism) * pow( float(aPrism), 2) * ( cos( PI / float(nPrism) ) / sin( PI / float(nPrism) ) ) ) * float(hPrism) );

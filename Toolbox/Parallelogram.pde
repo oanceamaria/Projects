@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/ 
+
 String aP = "";
 String bP= "";
 String hP = "";
@@ -8,6 +14,7 @@ boolean okaP = false;
 boolean okbP = false;
 boolean okhP = false;
 
+//the function where the interface for the parallelogram perimeter and area calculation page is created
 void parallelogramPA(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -62,6 +69,7 @@ void parallelogramPA(){
   
 }
 
+//the function, where defines actions for the parallelogram perimeter and area calculation page
 void parallelogramPAClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -93,6 +101,7 @@ void parallelogramPAClick(){
   }
 }
 
+//the function where calculate perimeter and area of the parallelogram
 void calculatesPAP(){
   perimeterP = str( 2 * ( float(aP) + float(bP) ) ); 
   areaP = str( float(bP) * float(hP) );

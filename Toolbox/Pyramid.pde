@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/ 
+
 String nPyramid = "";
 String aPyramid= "";
 String hPyramid = "";
@@ -8,6 +14,7 @@ boolean oknPyramid = false;
 boolean okaPyramid = false;
 boolean okhPyramid = false;
 
+//the function where the interface for the pyramid area and volume calculation page is created
 void pyramidAV(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -62,6 +69,7 @@ void pyramidAV(){
   
 }
 
+//the function, where defines actions for the pyramid area and volume calculation page
 void pyramidAVClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -93,6 +101,7 @@ void pyramidAVClick(){
   }
 }
 
+//the function where calculate area and volume of the pyramid
 void calculatesAVPyramid(){
   areaPyramid = str( ( ( (float) 1 / 4 ) * float(nPyramid) * pow( float(aPyramid), 2) * ( cos( PI / float(nPyramid) ) / sin( PI / float(nPyramid) ) ) ) + ( ( (float) 1 / 2 ) * float(nPyramid) *  float(aPyramid) * sqrt ( pow( float(hPyramid), 2) + ( ( (float) 1 / 4 ) *  pow( float(aPyramid), 2) *  pow ( ( cos( PI / float(nPyramid) ) / sin( PI / float(nPyramid) ) ), 2)  ) )  ) ); 
   volumePyramid = str( ( (float) 1 / 3 ) * ( ( (float) 1 / 4 ) * float(nPyramid) * pow( float(aPyramid), 2) * ( cos( PI / float(nPyramid) ) / sin( PI / float(nPyramid) ) ) ) * float(hPyramid) );

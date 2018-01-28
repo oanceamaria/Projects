@@ -1,3 +1,8 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
 
 ClipboardManager clipboard;
 ClipData clip;
@@ -6,6 +11,7 @@ Intent intentSearch;
 
 color getColor;
 
+//the function where the interface for the color picker page is created
 void colorPicker(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -18,6 +24,7 @@ void colorPicker(){
   text("Color Picker", width/2, height/30);
   image(backImg, width/36, height/60, width/6.5, height/15);
   
+  //if the camera is turned on the code below is performed, if the camera is turned off then this is start
   if (camera != null && camera.isStarted()){
     imageMode(CENTER);
     pushMatrix();
@@ -65,12 +72,14 @@ void colorPicker(){
   }
 }
 
+//the function, where defines actions for the color picker page
 void colorPickerClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 0;
     camera.stop();
   }
   
+  //the color code is copied to the clipboard by pressing the appropriate button
   if (mouseX > width/2 && mouseX < width-40 && mouseY > height/1.25 && mouseY <  height/1.25+height/15 ) {
      activity.runOnUiThread(new Runnable(){
       public void run(){
@@ -82,6 +91,7 @@ void colorPickerClick(){
     });  
   }
   
+  //the color code is searched on google by pressing the appropriate button
   if (mouseX > width/2 && mouseX < width-40 && mouseY > height/1.12 && mouseY <  height/1.12+height/15 ){
      activity.runOnUiThread(new Runnable(){
       public void run(){

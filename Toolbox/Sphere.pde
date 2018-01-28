@@ -1,8 +1,14 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String rSphere = "";
 String areaSphere = "";
 String volumeSphere = "";
 
-
+//the function where the interface for the sphere area and volume calculation page is created
 void sphereAV(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -43,6 +49,7 @@ void sphereAV(){
   
 }
 
+//the function, where defines actions for the sphere area and volume calculation page
 void sphereAVClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -57,6 +64,7 @@ void sphereAVClick(){
 
 }
 
+//the function where calculate area and volume of the sphere
 void calculatesAVSphere(){
   areaSphere = str( 4 * PI * pow( float(rSphere), 2 ) ); 
   volumeSphere = str( ( (float)4 / 3 ) * PI * pow( float(rSphere), 3 ) );

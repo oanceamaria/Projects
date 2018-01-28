@@ -1,7 +1,14 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/ 
+
 double latitude = 0;
 double longitude = 0;
 double altitude = 0;
 
+//the function where the interface for the location page is created
 void location(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -36,6 +43,7 @@ void location(){
   else text( "GPS is not enabled." ,  width/14, height/2.5);
 }
 
+//if touch the back button created in the application returns to the home page
 void locationClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 0;

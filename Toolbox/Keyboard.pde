@@ -1,6 +1,13 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/  
+
 boolean activeKeyboard = false;
 String valueKeyboard = "";
 
+//the function where the interface for the keyboard is created
 void keyboard(){
   noStroke();
   textAlign(CENTER, TOP);
@@ -88,6 +95,7 @@ void keyboard(){
   text("Done", width/2, height-height/13+15);
 }
 
+//the function, where defines actions for the key pressed
 void keyboardClick(){
   if (mouseY < height-height/2.1) activeKeyboard = false;
   if (mouseX > 25 && mouseX < width/3-25 && mouseY > height-height/2.22 && mouseY <  height-height/2.22+height/14 ) valueKeyboard += "1";
@@ -114,6 +122,7 @@ void keyboardClick(){
   }
 }
 
+//the function that displays an alert message if the maximum value of the entered number has been reached
  void valueTooLong(){
     AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
     alertDialog.setTitle("Information");

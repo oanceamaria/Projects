@@ -1,6 +1,13 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 int pageUC = 0;
 int angleUC = 0;
 
+//the function where the interface for the unit converter page is created
 void unitConverter(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -44,10 +51,10 @@ void unitConverter(){
   rotate( radians(angleUC) );
   image(iconUC, 0, 0, height/3.5, height/3.5);
   popMatrix();
-  
-  
+   
 }
 
+//the function, where defines actions for the unit converter page
 void unitConverterClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 0;

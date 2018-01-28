@@ -1,9 +1,16 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String weight1S = "";
 String weight2S = "";
 
 String unitW1 = "";
 String unitW2 = "";
 
+//the function, where the weight converter interface is created
 void weightConverter(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -127,6 +134,7 @@ void weightConverter(){
 
 }
 
+//the function, where defines actions on the weight converter page
 void weightConverterClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 7;
@@ -157,6 +165,7 @@ void weightConverterClick(){
   }
 }
 
+//the function in which an weight is converted from unit1 to unit2
 void convertsWeight(){  
   if ( unitW1 == "milligram (mg)" && unitW2 == "milligram (mg)" ) weight2S = weight1S;
   if ( unitW1 == "milligram (mg)" && unitW2 == "centigram (cg)" ) weight2S = str( float(weight1S) * 0.1 );

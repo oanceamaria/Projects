@@ -1,8 +1,14 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String rC = "";
 String perimeterC = "";
-String areaC = "";
+String areaC = ""; 
 
-
+//the function where the interface for the circle perimeter and area calculation page is created 
 void circlePA(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -43,6 +49,7 @@ void circlePA(){
   
 }
 
+//the function, where defines actions for the circle perimeter and area calculation page
 void circlePAClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -57,6 +64,7 @@ void circlePAClick(){
 
 }
 
+//the function where calculate perimeter and area of the circle
 void calculatesPAC(){
   perimeterC = str( 2 * PI * float(rC)  ); 
   areaC = str( PI * pow( float(rC), 2 ) );

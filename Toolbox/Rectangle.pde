@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/ 
+
 String lR = "";
 String LR= "";
 String perimeterR = "";
@@ -6,6 +12,7 @@ String areaR = "";
 boolean oklR = false;
 boolean okLR = false;
 
+//the function where the interface for the rectangle perimeter and area calculation page is created
 void rectanglePA(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -53,6 +60,7 @@ void rectanglePA(){
   
 }
 
+//the function, where defines actions for the rectangle perimeter and area calculation page
 void rectanglePAClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -75,6 +83,7 @@ void rectanglePAClick(){
   }
 }
 
+//the function where calculate perimeter and area of the rectangle
 void calculatesPAR(){
   perimeterR = str( 2 * ( float(lR) + float(LR) ) ); 
   areaR = str( float(lR) * float(LR) );

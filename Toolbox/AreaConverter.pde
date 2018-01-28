@@ -1,9 +1,16 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String area1S = "";
 String area2S = "";
 
 String unitAr1 = "";
 String unitAr2 = "";
 
+//the function, where the area converter interface is created
 void areaConverter(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -146,6 +153,7 @@ void areaConverter(){
   text("square mile", width/2+40, height/3.8+9*height/20); 
 }
 
+//the function, where defines actions on the area converter page
 void areaConverterClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 7;
@@ -180,6 +188,7 @@ void areaConverterClick(){
   }
 }
 
+//the function in which an angle is converted from unit1 to unit2
 void convertsArea(){
   if ( unitAr1 == "mm²" && unitAr2 == "mm²" ) area2S = area1S;
   if ( unitAr1 == "mm²" && unitAr2 == "cm²" ) area2S = str( float(area1S) * 0.01 );

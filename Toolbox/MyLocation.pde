@@ -1,7 +1,14 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/ 
+
 LocationManager locManager;
 LocationListener locListener;
 MyLocation myLocation;
 
+//defining the class in which the GPS coordinates are taken
 public class MyLocation extends Service implements LocationListener{  
   boolean isGPS = false; 
   
@@ -31,6 +38,7 @@ public class MyLocation extends Service implements LocationListener{
         return null;
    }
    
+   //if GPs is off, a message is displayed that directs the user to the settings to activate the location
    public void showSettings(){
       AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
       alertDialog.setTitle("GPS is not enabled");

@@ -1,9 +1,16 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String metric1S = "";
 String metric2S = "";
 
 String unitM1 = "";
 String unitM2 = "";
 
+//the function, where the metric converter interface is created
 void metricConverter(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -176,6 +183,7 @@ void metricConverter(){
   text("tera (T)", width/2+40, height/3.8+12*height/20); 
 }
 
+//the function, where defines actions on the metric converter page
 void metricConverterClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 7;
@@ -216,6 +224,7 @@ void metricConverterClick(){
   }
 }
 
+//the function in which an length is converted from unit1 to unit2
 void convertsMetric(){  
   if ( unitM1 == "pico (p)" && unitM2 == "pico (p)" ) metric2S = metric1S;
   if ( unitM1 == "pico (p)" && unitM2 == "nano (n)" ) metric2S = str( float(metric1S) * 1.0 * pow(10, -3) );

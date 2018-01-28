@@ -1,9 +1,16 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String volume1S = "";
 String volume2S = "";
 
 String unitV1 = "";
 String unitV2 = "";
 
+//the function, where the volume converter interface is created
 void volumeConverter(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -157,6 +164,7 @@ void volumeConverter(){
 
 }
 
+//the function, where defines actions on the volume converter page
 void volumeConverterClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 7;
@@ -193,6 +201,7 @@ void volumeConverterClick(){
   }
 }
 
+//the function in which a volume is converted from unit1 to unit2
 void convertsVolume(){  
   if ( unitV1 == "microliter / mm³" && unitV2 == "microliter / mm³" ) volume2S = volume1S;
   if ( unitV1 == "microliter / mm³" && unitV2 == "ml / cm³" ) volume2S = str( float(volume1S) * 1.0 * pow(10, -3) );

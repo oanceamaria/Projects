@@ -4,7 +4,7 @@
   MIT license
 */
 
-//Creating a class in which the accelerometer sent values will be read
+//Creating a class where the accelerometer sent values will be read
 
 SensorManager managerA;
 Sensor sensorA;

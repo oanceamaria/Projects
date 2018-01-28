@@ -1,8 +1,14 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/ 
+
 String aPenta = "";
 String perimeterPenta = "";
 String areaPenta = "";
 
-
+//the function where the interface for the pentagon perimeter and area calculation page is created
 void pentagonPA(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -43,6 +49,7 @@ void pentagonPA(){
   
 }
 
+//the function, where defines actions for the pentagon perimeter and area calculation page
 void pentagonPAClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -57,6 +64,7 @@ void pentagonPAClick(){
 
 }
 
+//the function where calculate perimeter and area of the pentagon
 void calculatesPAPenta(){
   perimeterPenta = str( 5 * float(aPenta)  ); 
   areaPenta = str( ( ( sqrt( 25 + 10 * sqrt(5) ) ) / 4 ) * pow( float(aPenta), 2 ) );

@@ -1,4 +1,10 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/ 
 
+//the function where the interface for the home page is created
 void home(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -48,6 +54,7 @@ void home(){
   text("Perimeter \nArea \nVolume", width/2, 5.9*height/7);
 }
 
+//the function, where defines actions for the home page
 void homeClick(){
   if ( mouseX > 25 && mouseX < width/3-25 && mouseY > height/8 && mouseY < height/8+height/3.5-35 ) {
     page = 1;

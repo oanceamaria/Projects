@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/ 
+
 String aRP = "";
 String bRP= "";
 String cRP = "";
@@ -8,6 +14,7 @@ boolean okaRP = false;
 boolean okbRP = false;
 boolean okcRP = false;
 
+//the function where the interface for the rectangular parallelepiped area and volume calculation page is created
 void rectangularParallelepipedAV(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -62,6 +69,7 @@ void rectangularParallelepipedAV(){
   
 }
 
+//the function, where defines actions for the rectangular parallelepiped area and volume calculation page
 void rectangularParallelepipedAVClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -92,7 +100,8 @@ void rectangularParallelepipedAVClick(){
     valueKeyboard = cRP;
   }
 }
-
+.
+//the function where calculate area and volume of the rectangular parallelepiped
 void calculatesAVRectangularParallelepiped(){
   areaRP = str( float(aRP) * float(bRP) * float(cRP) ); 
   volumeRP = str(  2 * ( float(aRP) * float(bRP) + float(aRP) * float(cRP) + float(bRP) * float(cRP) ) );

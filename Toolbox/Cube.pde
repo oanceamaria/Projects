@@ -1,8 +1,14 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String aCube = "";
 String areaCube = "";
 String volumeCube = "";
 
-
+//the function where the interface for the cube area and volume calculation page is created
 void cubeAV(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -43,6 +49,7 @@ void cubeAV(){
   
 }
 
+//the function, where defines actions for the cube area and volume calculation page
 void cubeAVClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -57,6 +64,7 @@ void cubeAVClick(){
 
 }
 
+//the function where calculate area and volume of the cube
 void calculatesAVCube(){
   areaCube = str( 6 * pow( float(aCube), 2 ) ); 
   volumeCube = str( pow( float(aCube), 3 ) );

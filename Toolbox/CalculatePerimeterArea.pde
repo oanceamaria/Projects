@@ -1,5 +1,12 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 int pagePA = 0;
 
+//the function where the interface for the perimeter and area calculation page is created
 void calculatePerimeterArea(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -40,6 +47,7 @@ void calculatePerimeterArea(){
   text("Hexagon", width/2, height/8+9*height/12);
 }
 
+//the function, where defines actions for the perimeter and area calculation page
 void calculatePerimeterAreaClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 8;

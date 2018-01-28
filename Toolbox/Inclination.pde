@@ -1,5 +1,12 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/  
+
 float inclination;
 
+//the function where the interface for the inclination page is created
 void inclination(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -12,6 +19,7 @@ void inclination(){
   text("Inclination", width/2, height/30); 
   image(backImg, width/36, height/60, width/6.5, height/15);
   
+  //the inclination is calculated based on the values returned by the accelerometer
   inclination = atan( ay / (sqrt(pow(ax,2) + pow(az,2))));
   inclination *= 180.00;
   inclination /= PI;
@@ -34,6 +42,7 @@ void inclination(){
   if ( inclination >= 0) text("Inclination: " + round( (inclination * 100.0f ) / 100.0f ) + "°", width/2, height/1.4);
 }
 
+//if touch the back button created in the application returns to the home page
 void inclinationClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 0;

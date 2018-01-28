@@ -1,9 +1,16 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/ 
+
 String length1S = "";
 String length2S = "";
 
 String unitL1 = "";
 String unitL2 = "";
 
+//the function, where the length converter interface is created
 void lengthConverter(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -146,6 +153,7 @@ void lengthConverter(){
   text("mile (mi)", width/2+40, height/3.8+9*height/20); 
 }
 
+//the function, where defines actions on the length converter page
 void lengthConverterClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 7;
@@ -180,8 +188,8 @@ void lengthConverterClick(){
   }
 }
 
-void convertsLength(){
-  
+//the function in which an length is converted from unit1 to unit2
+void convertsLength(){ 
   if ( unitL1 == "millimeter (mm)" && unitL2 == "millimeter (mm)" ) length2S = length1S;
   if ( unitL1 == "millimeter (mm)" && unitL2 == "centimeter (cm)" ) length2S = str( float(length1S) * 0.1 );
   if ( unitL1 == "millimeter (mm)" && unitL2 == "inch (in)" ) length2S = str( float(length1S) * 0.0393700787 );

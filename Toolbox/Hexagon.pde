@@ -1,8 +1,14 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/ 
+
 String aH = "";
 String perimeterH = "";
 String areaH = "";
 
-
+//the function where the interface for the hexagon perimeter and area calculation page is created
 void hexagonPA(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -43,6 +49,7 @@ void hexagonPA(){
   
 }
 
+//the function, where defines actions for the hexagon perimeter and area calculation page
 void hexagonPAClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -57,6 +64,7 @@ void hexagonPAClick(){
 
 }
 
+//the function where calculate perimeter and area of the hexagon
 void calculatesPAH(){
   perimeterH = str( 6 * float(aH)  ); 
   areaH = str( (  ( 3 * sqrt(3) ) / 2 ) * pow( float(aH), 2 ) );

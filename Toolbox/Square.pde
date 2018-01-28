@@ -1,8 +1,14 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String lS = "";
 String perimeterS = "";
 String areaS = "";
 
-
+//the function where the interface for the square perimeter and area calculation page is created 
 void squarePA(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -43,6 +49,8 @@ void squarePA(){
   
 }
 
+
+//the function, where defines actions for the square perimeter and area calculation page
 void squarePAClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -57,6 +65,7 @@ void squarePAClick(){
 
 }
 
+//the function where calculate perimeter and area of the square
 void calculatesPAS(){
   perimeterS = str( 4 * float(lS)  ); 
   areaS = str( pow( float(lS), 2 ) );

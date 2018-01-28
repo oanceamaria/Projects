@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String aD = "";
 String hD= "";
 String perimeterD = "";
@@ -6,6 +12,7 @@ String areaD = "";
 boolean okaD = false;
 boolean okhD = false;
 
+//the function where the interface for the circle perimeter and area calculation page is created
 void diamondPA(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -53,6 +60,7 @@ void diamondPA(){
   
 }
 
+//the function, where defines actions for the diamond perimeter and area calculation page
 void diamondPAClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = -2;
@@ -75,6 +83,7 @@ void diamondPAClick(){
   }
 }
 
+//the function where calculate perimeter and area of the diamond
 void calculatesPAD(){
   perimeterD = str( 4 *  float(aD) ); 
   areaD = str( float(aD) * float(hD) );

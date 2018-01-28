@@ -1,4 +1,12 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 float xBL, yBL, xBLV, yBLV, xBLH, yBLH;
+
+//the function, where the bubble level interface is created
 void bubbleLevel(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -11,6 +19,8 @@ void bubbleLevel(){
   text("Bubble Level", width/2, height/30);
   image(backImg, width/36, height/60, width/6.5, height/15);
   
+  //the bubble is initially positioned at the zero point of the bubble level
+  //this point changes according to the inclination of the phone, values that return the accelerometer
   xBLH = width/2 + ax * 25;
   
   xBL = width/2.7 + ax * 15;
@@ -30,6 +40,7 @@ void bubbleLevel(){
 
 }
 
+//if touch the back button created in the application returns to the home page
 void bubbleLevelClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 0;

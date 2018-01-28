@@ -1,9 +1,16 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 String time1S = "";
 String time2S = "";
 
 String unitT1 = "";
 String unitT2 = "";
 
+//the function, where the time converter interface is created
 void timeConverter(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -176,6 +183,7 @@ void timeConverter(){
   text("millennium", width/2+40, height/3.8+12*height/20); 
 }
 
+//the function, where defines actions on the time converter page
 void timeConverterClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 7;
@@ -216,6 +224,7 @@ void timeConverterClick(){
   }
 }
 
+//the function in which an angle is converted from unit1 to unit2
 void convertsTime(){  
   if ( unitT1 == "nanosecond" && unitT2 == "nanosecond" ) time2S = time1S;
   if ( unitT1 == "nanosecond" && unitT2 == "microsecond" ) time2S = str( float(time1S) * 1.0 * pow(10, -3) );

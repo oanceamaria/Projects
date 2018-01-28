@@ -1,8 +1,15 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 int pagePAV = 0;
 boolean okPerimeter = true;
 boolean okVolume = true;
 float alpha = 0;
 
+//the function where the interface for the perimeter, area and volume calculation page is created
 void calculatePAV(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -29,6 +36,7 @@ void calculatePAV(){
   drawAnimCube();
 }
 
+//the function, where defines actions for the perimeter, area and volume calculation page
 void calculatePAVClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 0;
@@ -52,6 +60,7 @@ void calculatePAVClick(){
   
 }
 
+//the function where you create a 3d cube that rotates
 void drawAnimCube(){
   float x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6, x7, y7, x8, y8;
   float up1 = height/1.4;

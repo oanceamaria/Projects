@@ -49,7 +49,7 @@ PImage [] clouds;
 
 boolean GPSenabeled = true;
 
-//specific base processing function in which the variables are initialized and the images are loaded
+//specific base processing function where the variables are initialized and the images are loaded
 void setup(){
   //defining the device orientation
   orientation(PORTRAIT); 

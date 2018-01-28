@@ -1,3 +1,9 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
 MediaRecorder mRecorder;
 Thread soundRunner;
 int soundDB = 0;
@@ -10,6 +16,7 @@ final Runnable soundUpdater = new Runnable(){
 };
 final Handler soundHendler = new Handler();
 
+//the function where the interface for the sound intensity page is created
 void soundIntenity(){
   strokeWeight(3);
   stroke(#0000ff);
@@ -25,6 +32,7 @@ void soundIntenity(){
   imageMode(CENTER);
   image(soundMeterImg, width/2, height/2.5, width-100, height/2);
   
+  //animate the needle according to the intensity of the sound
   pushMatrix();
   translate(width/2, height/2.5);
   rotate(radians(soundDB*2.5));
@@ -39,6 +47,7 @@ void soundIntenity(){
 
 }
 
+//the microphone starts to record the sounds
 public void startRecorder(){
   if (mRecorder == null){
     mRecorder = new MediaRecorder();
@@ -56,6 +65,7 @@ public void startRecorder(){
     }
 }
 
+//the microphone stops to record the sounds
 public void stopRecorder() {
   if (mRecorder != null) {
     mRecorder.stop();       
@@ -64,6 +74,7 @@ public void stopRecorder() {
   }
 }
 
+//the function that takes the amplitude of the sound and turns into decibels
 public void updateValue(){
   if (mRecorder != null){
     amplitude = (int) (mRecorder.getMaxAmplitude());
@@ -74,6 +85,7 @@ public void updateValue(){
   }
 }
 
+//if touch the back button created in the application returns to the home page
 void soundIntensityClick(){
   if ( mouseX > width/36 && mouseX < width/36+width/6.5 && mouseY > height/60 && mouseY < height/60+height/15 ) {
     page = 0;
