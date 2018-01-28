@@ -100,7 +100,7 @@ void rectangularParallelepipedAVClick(){
     valueKeyboard = cRP;
   }
 }
-.
+
 //the function where calculate area and volume of the rectangular parallelepiped
 void calculatesAVRectangularParallelepiped(){
   areaRP = str( float(aRP) * float(bRP) * float(cRP) ); 
