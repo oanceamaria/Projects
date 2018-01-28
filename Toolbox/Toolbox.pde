@@ -1,3 +1,10 @@
+/*
+  created by Oancea Maria-Nicoleta
+  email: oanceamarianicoleta@gmail.com
+  MIT license
+*/
+
+//importing the libraries that will be used in the application
 import android.app.Activity;
 import android.content.Context;
 import android.media.MediaRecorder;
@@ -21,15 +28,13 @@ import android.content.ClipboardManager;
 import android.content.ClipData;
 import android.widget.Toast;
 import android.net.Uri; 
-
-
 import ketai.camera.*;
 
+//declaring global variables
 KetaiCamera camera;
 
 Activity activity;
 Context context;
-
 
 Accelerometer accelerometer;
 
@@ -44,13 +49,17 @@ PImage [] clouds;
 
 boolean GPSenabeled = true;
 
+//specific base processing function in which the variables are initialized and the images are loaded
 void setup(){
+  //defining the device orientation
   orientation(PORTRAIT); 
   
   activity = this.getActivity();
   context = activity.getApplicationContext();
+  
   camera = new KetaiCamera(this, 950, 540, 24);
   
+  //defining of permissions
   activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
   activity.requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, 1);
   
@@ -62,6 +71,7 @@ void setup(){
   accelerometer = new Accelerometer();
   managerA.registerListener(accelerometer, sensorA, SensorManager.SENSOR_DELAY_GAME);
   
+  //loading the images to be used in the application
   colorPickerImg = loadImage("colorPicker.png");
   converterImg = loadImage("convertor.png");
   distanceImg = loadImage("distanta.png");
@@ -113,9 +123,14 @@ void setup(){
     clouds[i] = loadImage(imgName);
   }
 }
-  
+
+//specific processing function that runs 24 times per second
+//it will contain the application interface
 void draw(){
+  //defining background color
   background(#ffffff);
+  
+  //calling the interface specific functions of each page depending on the context
   if ( page == 0 ) home();
   if ( page == 1 ) colorPicker();
   if ( page == 2 ) soundIntenity();
@@ -153,11 +168,13 @@ void draw(){
   if ( page == -2 && pagePAV == 2 && pageAV == 6) cubeAV();  
   if ( page == -2 && pagePAV == 2 && pageAV == 7) rectangularParallelepipedAV();
   
-  if(activeKeyboard) keyboard();
-  
+  if(activeKeyboard) keyboard();  
 }
 
+//specific processing function that runs at the touch of a button
+//it will contain the application actions
 void mousePressed(){
+  //calling the actions specific functions of each page depending on the context
   if ( page == 0 ) homeClick();
   if ( page == 1 ) colorPickerClick();
   if ( page == 2 ) soundIntensityClick();  
@@ -195,41 +212,44 @@ void mousePressed(){
   if ( page == -2 && pagePAV == 2 && pageAV == 5) prismAVClick(); 
   if ( page == -2 && pagePAV == 2 && pageAV == 6) cubeAVClick();   
   if ( page == -2 && pagePAV == 2 && pageAV == 7) rectangularParallelepipedAVClick(); 
-
 }
 
+//specific processing function that runs at the touch  of a key
 void keyReleased() {
-    if (key == CODED && keyCode == android.view.KeyEvent.KEYCODE_BACK) {
-      if (page >= 1) page = 0;
-      if (page == -1) {
-        page = 7;
-        activeKeyboard = false;
-      }
-      if (page == -2 && pagePA == 0 && pageAV == 0) {
-        page = 8;
-        pagePAV = 0;
-        activeKeyboard = false;
-      }
-      if (page == -2 && pagePAV == 1 && pagePA >= 1) {
-        page = -2;
-        pagePAV = 1;
-        pagePA = 0;
-        activeKeyboard = false;
-      }
-      if (page == -2 && pagePAV == 2 && pageAV >= 1) {
-        page = -2;
-        pagePAV = 2;
-        pageAV = 0;
-        activeKeyboard = false;
-      }
+  //when pressing the back key of the phone, it returns to the previous page depending on the situation
+  if (key == CODED && keyCode == android.view.KeyEvent.KEYCODE_BACK) {
+    if (page >= 1) page = 0;
+    if (page == -1) {
+      page = 7;
+      activeKeyboard = false;
     }
+    if (page == -2 && pagePA == 0 && pageAV == 0) {
+      page = 8;
+      pagePAV = 0;
+      activeKeyboard = false;
+    }
+    if (page == -2 && pagePAV == 1 && pagePA >= 1) {
+      page = -2;
+      pagePAV = 1;
+      pagePA = 0;
+      activeKeyboard = false;
+    }
+    if (page == -2 && pagePAV == 2 && pageAV >= 1) {
+      page = -2;
+      pagePAV = 2;
+      pageAV = 0;
+      activeKeyboard = false;
+    }
+  }
 }
 
+//special function to read the camera of phone
 void onCameraPreviewEvent()
 {
   camera.read();
 }
 
+//specific android function that runs when the application is in pause
 public void onPause() {
   super.onPause();
   if (camera != null && camera.isStarted()) camera.stop();
