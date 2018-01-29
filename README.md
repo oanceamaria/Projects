@@ -9,7 +9,7 @@
   - The generated apk is instaled on the device.
 
 
-### How to use:
+## How to use:
   - The home page contains eight buttons, with different actions:
     
 ###  1. Color picker:
