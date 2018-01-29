@@ -1,5 +1,5 @@
 # Toolbox
-Android application created with Processing for Android.
+ - Android application created with Processing for Android.
 
 ## Field of use:
   - Created to be used in constructions, but can be used in other domains.
@@ -10,16 +10,16 @@ Android application created with Processing for Android.
 
 
 ### How to use:
-  The home page contains eight buttons, with different actions:
+  - The home page contains eight buttons, with different actions:
     
-###  1.Color picker:
+###  1. Color picker:
   - In this page you can get the realtime color of any object, using device's camera.
   - The received color can be copied to clipboard, or you can search it's code on goole.
     
-###  2.Sound intensity:
+###  2. Sound intensity:
   - You can get the sound intensity from suroundings, by parsing the sound amplitude received through microphone to dB;
 
-### 3.Location:
+### 3. Location:
   - You get the GPS coordonatied (altitude, longitude, latitude)
     
 ### 4. Distanta:
