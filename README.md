@@ -1,13 +1,11 @@
 # Toolbox
-Android application created with Processing for Android.
+Android application created with Processing for Android._
 
-<br />
 ## About:
   - Created to be used in constructions, but can be used in other domains.
   - The source code is exported as .apk from Processing IDE.
-  - The generated apk is instaled on the device.
+  - The generated apk is instaled on the device._
 
-<br />
 ## How to use:
   - The home page contains eight buttons, with different actions:
     
